@@ -1,0 +1,17 @@
+{
+  "files.autoSaveDelay": 400,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "files.insertFinalNewline": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.sortImports": true
+  },
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "typescript.preferences.quoteStyle": "single",
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "on",
+  "files.autoSave": "onFocusChange",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+}
