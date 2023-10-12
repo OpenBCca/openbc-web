@@ -2,7 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "circlecodesolution.ccs-flutter-color",
-    "rvest.vs-code-prettier-eslint",
+    "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker"
   ]
 }
