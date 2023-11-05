@@ -1,3 +1,9 @@
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+} from '@mui/material';
 import { } from 'react';
 
 interface Link {
@@ -25,6 +31,14 @@ export default function Project({
   programAreas,
 }: ProjectProps) {
   return (
-    <div>Hello World</div>
+    <Box>
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography variant="h4" component="div">
+            {title}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
