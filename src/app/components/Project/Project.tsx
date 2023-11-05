@@ -37,6 +37,38 @@ export default function Project({
           <Typography variant="h4" component="div">
             {title}
           </Typography>
+          <Typography variant="body2">
+            {description}
+          </Typography>
+          <Typography variant="h6">
+            {
+              links.map(link => (
+                <a href={link.url} target="_blank" rel="noopener">{link.title}</a>
+              ))
+            }
+          </Typography>
+          <Typography>
+            Partner: {partner}
+          </Typography>
+          <Typography>
+            Languages: {languages.join(", ")}
+          </Typography>
+          {
+            technologies
+            && (
+              <Typography>
+                Technologies: {technologies.join(", ")}
+              </Typography>
+            )
+          }
+          {
+            programAreas
+            && (
+              <Typography>
+                Program Areas: {programAreas}
+              </Typography>
+            )
+          }
         </CardContent>
       </Card>
     </Box>
