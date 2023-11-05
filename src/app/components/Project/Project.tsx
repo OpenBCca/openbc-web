@@ -4,7 +4,17 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
+import dynamic from 'next/dynamic';
 import { } from 'react';
+
+/**
+ * @todo Is there a better way to import the Link component from Material UI without getting the NextJS error:
+ *
+ * "Cannot access Link.prototype on the server. You cannot dot into a client module from a server component. You can only pass the imported name through."
+ */
+const ClientOnlyLink = dynamic(() => import('@mui/material/Link'), {
+  ssr: false,
+});
 
 interface Link {
   title: string;
@@ -43,7 +53,7 @@ export default function Project({
           <Typography variant="h6">
             {
               links.map(link => (
-                <a href={link.url} target="_blank" rel="noopener">{link.title}</a>
+                <ClientOnlyLink href={link.url} target="_blank" rel="noopener">{link.title}</ClientOnlyLink>
               ))
             }
           </Typography>
