@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  env:{
+    GITHUB_API_KEY: process.env.GITHUB_TOKEN,
+  },
 }
 
 module.exports = nextConfig

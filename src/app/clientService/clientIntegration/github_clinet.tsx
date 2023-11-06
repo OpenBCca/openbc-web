@@ -1,11 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
-import * as dotenv from "dotenv";
-
-dotenv.config();
 
 // Your GitHub personal access token
 // Replace 'YOUR_PERSONAL_ACCESS_TOKEN' with your GitHub personal access token
-const accessToken: string | undefined = process.env.GITHUB_TOKEN;
+const accessToken: string | undefined = process.env.GITHUB_API_KEY;
 
 if (!accessToken) {
   throw new Error('GitHub access token is not provided.');
