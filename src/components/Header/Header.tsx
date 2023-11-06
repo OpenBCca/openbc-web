@@ -1,10 +1,14 @@
-import { Box } from '@mui/material'
+'use client'
+
+import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
+import React from 'react'
 
 interface Props {}
 
 const style = {
   link: {
     fontSize: 14,
+    fontWeight: '600',
     cursor: 'pointer',
     borderRadius: '6px',
     paddingX: '0.8rem',
@@ -17,11 +21,15 @@ const style = {
     '&:active': {
       transform: 'scale(0.90) translateY(0.4rem)',
     },
+    '& .Mui-selected': {
+      color: '#2563eb',
+    },
     transition: 'all 240ms cubic-bezier(0.4, 0.4, 0.4, 0.4)',
   },
 }
 
 function Header({}: Props) {
+  const [value, setValue] = React.useState(0)
   return (
     <Box
       component={'header'}
@@ -44,25 +52,22 @@ function Header({}: Props) {
           OpenBC
         </Box>
 
-        <Box
-          component={'nav'}
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            if (typeof newValue === 'number') setValue(newValue)
+          }}
           sx={{
             display: 'flex',
             alignItems: 'center',
             columnGap: '0.4rem',
-            fontWeight: '600',
           }}
         >
-          <Box component={'a'} sx={style.link}>
-            Projects
-          </Box>
-          <Box component={'a'} sx={style.link}>
-            Join Us
-          </Box>
-          <Box component={'a'} sx={style.link}>
-            About
-          </Box>
-        </Box>
+          <BottomNavigationAction label="Projects" sx={style.link} />
+          <BottomNavigationAction label="Join Us" sx={style.link} />
+          <BottomNavigationAction label="About" sx={style.link} />
+        </BottomNavigation>
       </Box>
     </Box>
   )
