@@ -4,6 +4,7 @@ interface Props {}
 
 const style = {
   link: {
+    fontSize: 14,
     cursor: 'pointer',
     borderRadius: '6px',
     paddingX: '0.8rem',
@@ -28,16 +29,16 @@ function Header({}: Props) {
         width: '100vw',
         display: 'flex',
         justifyContent: 'center',
-        paddingY: '1.4rem',
         borderBottom: 2,
+        paddingY: '1.2rem',
         borderColor: '#e7e5e4',
       }}
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: '0.8rem' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: '0.4rem' }}>
         <Box
           sx={{
-            fontSize: 34,
-            fontWeight: '700',
+            fontSize: 28,
+            fontWeight: '800',
           }}
         >
           OpenBC
