@@ -12,13 +12,14 @@ function Banner() {
       sx={{
         textAlign: 'center',
         backgroundColor: '#ededed',
-        height: '15rem',
+        height: '7rem',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
+        padding: '5rem 0'
       }}
     >
-      <Typography variant='h3'>
+      <Typography variant='h4' sx={{ fontFamily: 'inherit', fontWeight:'700' }}>
         {'Be a Force For Good in BC!'}
       </Typography>
       <Typography variant='body1'>
