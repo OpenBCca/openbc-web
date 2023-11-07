@@ -46,7 +46,7 @@ export default function Project({
           <Typography variant="h6">
             {
               links.map(link => (
-                <Link href={link.url} target="_blank" rel="noopener">{link.title}</Link>
+                <Link href={link.url}>{link.title}</Link>
               ))
             }
           </Typography>
