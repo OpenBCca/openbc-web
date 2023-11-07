@@ -45,8 +45,8 @@ export default function Project({
           </Typography>
           <Typography variant="h6">
             {
-              links.map(link => (
-                <Link href={link.url}>{link.title}</Link>
+              links.map((link, idx) => (
+                <Link href={link.url} key={`project-link-${idx}`}>{link.title}</Link>
               ))
             }
           </Typography>
