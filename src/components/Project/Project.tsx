@@ -8,21 +8,9 @@ import {
   Typography,
 } from '@mui/material';
 import { } from 'react';
-
-interface Link {
-  title: string;
-  url: string;
-}
-
-interface Project {
-  title: string;
-  description: string;
-  links: Array<Link>;
-  partner?: string;
-  languages: Array<string>;
-  technologies?: Array<string>;
-  programAreas?: string;
-}
+import {
+  Project,
+} from './Project.types';
 
 export default function Project({
   title,
