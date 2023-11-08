@@ -1,6 +1,6 @@
 // pages/api/github.js
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getReposList, getRepoInfo } from './github_clinet';
+import { getReposList, getRepoInfo } from '../../client-services/github.client-service';
 
 interface RepoInfo {
     name: string;
