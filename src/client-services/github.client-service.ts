@@ -20,17 +20,13 @@ function axiosConfig(): AxiosInstance {
   return axiosInstance;
 }
 
-const axiosInstance = axiosConfig();
-
-
-
 export async function getReposList(): Promise<AxiosResponse> {
-  const response: AxiosResponse = await axiosInstance.get('/orgs/OpenBCca/repos');
+  const response: AxiosResponse = await axiosConfig().get('/orgs/OpenBCca/repos');
   return response;
 }
 
 export async function getRepoInfo(repo_name: string, para: string = ''): Promise<AxiosResponse> {
-  const response = await axiosInstance.get(`/repos/OpenBCca/${repo_name}${para}`);
+  const response = await axiosConfig().get(`/repos/OpenBCca/${repo_name}${para}`);
   return response;
 }
 
