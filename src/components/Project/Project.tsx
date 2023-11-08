@@ -14,7 +14,7 @@ interface Link {
   url: string;
 }
 
-interface ProjectProps {
+interface Project {
   title: string;
   description: string;
   links: Array<Link>;
@@ -32,7 +32,7 @@ export default function Project({
   languages,
   technologies,
   programAreas,
-}: ProjectProps) {
+}: Project) {
   return (
     <Box>
       <Card sx={{ minWidth: 275 }}>
