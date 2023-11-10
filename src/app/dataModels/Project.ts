@@ -1,7 +1,4 @@
-interface Link {
-  title: string
-  url: string
-}
+import { Link } from './Link'
 
 export interface Project {
   title: string
