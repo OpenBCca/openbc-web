@@ -2,7 +2,8 @@
 
 import { Box, Card, CardContent, Link, Typography } from '@mui/material'
 import {} from 'react'
-import { Project } from './Project.types'
+import { Link as LinkInterface } from '../../app/dataModels/Link'
+import { Project } from '../../app/dataModels/Project'
 
 export default function Project({
   title,
@@ -22,7 +23,7 @@ export default function Project({
           </Typography>
           <Typography variant="body2">{description}</Typography>
           <Typography variant="h6">
-            {links.map((link, idx) => (
+            {links.map((link: LinkInterface, idx: number) => (
               <Link href={link.url} key={`project-link-${idx}`}>
                 {link.title}
               </Link>
