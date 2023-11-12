@@ -20,7 +20,14 @@ function Header({}: Props) {
         borderColor: '#e7e5e4',
       }}
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: '0.4rem' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          rowGap: '0.4rem',
+          alignItems: 'center',
+        }}
+      >
         <Box
           sx={{
             fontSize: 28,
@@ -33,8 +40,8 @@ function Header({}: Props) {
         <BottomNavigation
           showLabels
           value={value}
-          onChange={(event, newValue) => {
-            if (typeof newValue === 'number') setValue(newValue)
+          onChange={(event, newValue: number) => {
+            setValue(newValue)
           }}
           sx={{
             display: 'flex',
