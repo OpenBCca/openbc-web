@@ -23,16 +23,14 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".eslintrc.cjs",
-    "next.config.js",
-    "dist/types/**/*.ts",
-    "jest.config.mjs",
-    "jest.setup.js",
-    "**/__tests__/*.ts"
+    "**/*.json",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.cjs",
+    "dist/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
