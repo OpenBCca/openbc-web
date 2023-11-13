@@ -9,3 +9,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1,
+h2,
+.description {
+  text-align: center;
+}
+
+.profile {
+  display: block;
+  margin: 0 auto;
+}

@@ -1,7 +1,8 @@
 'use client'
 
 import { header_style } from '@/styles/header-style'
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
+import { BottomNavigation, BottomNavigationAction, Box, Box } from '@mui/material'
+import Link from 'next/link'
 import React from 'react'
 
 interface Props {}
@@ -32,6 +33,7 @@ function Header({}: Props) {
           sx={{
             fontSize: 28,
             fontWeight: '800',
+            textAlign: 'center',
           }}
         >
           OpenBC
@@ -53,6 +55,32 @@ function Header({}: Props) {
           <BottomNavigationAction label="Join Us" sx={header_style.link} />
           <BottomNavigationAction label="About" sx={header_style.link} />
         </BottomNavigation>
+          <Box
+            component={'nav'}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              columnGap: '0.4rem',
+              fontWeight: '600',
+            }}
+          >
+            <Link style={style.link} href="\">
+              Home
+            </Link>
+            <Link style={style.link} href="\project" passHref>
+              Project
+            </Link>
+            <Link style={style.link} href="\projects" passHref>
+              Projects
+            </Link>
+            <Link style={style.link} href="\join-us" passHref>
+              Join Us
+            </Link>
+            <Link style={style.link} href="\about" passHref>
+              About
+            </Link>
+          </Box>
+        </Box>
       </Box>
     </Box>
   )

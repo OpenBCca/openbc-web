@@ -1,17 +1,14 @@
-// homepage
-
 import { Metadata } from 'next'
-import HomePage from './_component/HomePage'
 
 export const metadata: Metadata = {
-  title: 'Home | OpenBC',
+  title: 'Join Us | OpenBC',
   description: 'Be a Force for Good in BC!',
 }
 
-export default function Home() {
+export default function JoinUs() {
   return (
     <>
-      <HomePage />
+      <h1>Join Us</h1>
     </>
   )
 }
