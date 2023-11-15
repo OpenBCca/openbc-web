@@ -47,4 +47,10 @@ my-nextjs-app/
 ├── next.config.js # Next.js configuration file
 │
 ├── package.json # Project metadata and dependencies
-└── README.md # Project documentation
+├── README.md # Project documentation
+└── typescript_coding_standards.md # Coding standards
+
+# Coding Standards
+
+Please refer to typescript_coding_standards.md for coding standards
+Credit to Andreea Anichiti @anichitiandreea on GitHub
