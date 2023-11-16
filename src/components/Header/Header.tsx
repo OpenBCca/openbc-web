@@ -71,16 +71,15 @@ function Header({}: Props) {
             alignItems: 'center',
             columnGap: '0.4rem',
           }}
-        >
-          <Box component={'a'} sx={style.link} href="">
-            Projects
-          </Box>
-          <Box component={'a'} sx={style.link} href="">
-            Join Us
-          </Box>
-          <Box component={'a'} sx={style.link} href="">
-            About
-          </Box>
+        />
+        <Box component={'a'} sx={style.link} href="">
+          Projects
+        </Box>
+        <Box component={'a'} sx={style.link} href="">
+          Join Us
+        </Box>
+        <Box component={'a'} sx={style.link} href="">
+          About
         </Box>
       </Box>
     </Box>
