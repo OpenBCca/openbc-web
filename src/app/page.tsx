@@ -1,5 +1,3 @@
-// homepage
-
 import { Metadata } from 'next'
 import HomePage from './_component/HomePage'
 

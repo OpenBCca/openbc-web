@@ -1,10 +1,4 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
-
-export const metadata: Metadata = {
-  title: 'Home | OpenBC',
-  description: 'Be a Force for Good in BC!',
-}
 
 export default function About() {
   return (
