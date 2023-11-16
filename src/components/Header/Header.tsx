@@ -1,4 +1,8 @@
-import { Box } from '@mui/material'
+'use client'
+
+import { header_style } from '@/styles/header-style'
+import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
+import React from 'react'
 
 interface Props {}
 
@@ -26,6 +30,7 @@ const style = {
 }
 
 function Header({}: Props) {
+  const [value, setValue] = React.useState(0)
   return (
     <Box
       component={'header'}
@@ -38,7 +43,14 @@ function Header({}: Props) {
         borderColor: '#e7e5e4',
       }}
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: '0.4rem' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          rowGap: '0.4rem',
+          alignItems: 'center',
+        }}
+      >
         <Box
           sx={{
             fontSize: 28,
@@ -48,13 +60,16 @@ function Header({}: Props) {
           OpenBC
         </Box>
 
-        <Box
-          component={'nav'}
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue: number) => {
+            setValue(newValue)
+          }}
           sx={{
             display: 'flex',
             alignItems: 'center',
             columnGap: '0.4rem',
-            fontWeight: '600',
           }}
         >
           <Box component={'a'} sx={style.link} href="">
