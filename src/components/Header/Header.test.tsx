@@ -3,7 +3,7 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
 describe('Header', () => {
-  it('renders header', () => {
+  it('should render header', () => {
     render(<Header />)
 
     // Query header element

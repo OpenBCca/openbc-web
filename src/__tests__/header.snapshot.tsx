@@ -5,7 +5,7 @@ import { render } from '@testing-library/react'
 describe.skip('skips snapshot test', () => {})
 
 describe('Header snapshot test', () => {
-  it('renders header unchanged', () => {
+  it('should render header unchanged', () => {
     const { container } = render(<Header />)
     expect(container).toMatchSnapshot()
   })
