@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot test renders header unchanged 1`] = `
+<div>
+  <header
+    class="MuiBox-root css-sdwowb"
+  >
+    <div
+      class="MuiBox-root css-1vk2f7t"
+    >
+      <div
+        class="MuiBox-root css-ziu5zu"
+      >
+        OpenBC
+      </div>
+      <nav
+        class="MuiBox-root css-g4rlas"
+      >
+        <a
+          class="MuiBox-root css-18wy14r"
+          href=""
+        >
+          Projects
+        </a>
+        <a
+          class="MuiBox-root css-18wy14r"
+          href=""
+        >
+          Join Us
+        </a>
+        <a
+          class="MuiBox-root css-18wy14r"
+          href=""
+        >
+          About
+        </a>
+      </nav>
+    </div>
+  </header>
+</div>
+`;

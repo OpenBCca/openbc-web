@@ -14,6 +14,7 @@ const style = {
     borderRadius: '6px',
     paddingX: '0.8rem',
     paddingY: '0.4rem',
+    textDecoration: 'none',
     '&:hover': {
       transform: 'translateY(0.4rem)',
       backgroundColor: 'black',
@@ -21,6 +22,9 @@ const style = {
     },
     '&:active': {
       transform: 'scale(0.90) translateY(0.4rem)',
+    },
+    '&:visited': {
+      color: 'inherit',
     },
     transition: 'all 240ms cubic-bezier(0.4, 0.4, 0.4, 0.4)',
   },

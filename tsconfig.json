@@ -29,12 +29,8 @@
     }
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*",
     ".next/types/**/*.ts",
-    ".eslintrc.cjs",
-    "next.config.js",
     "dist/types/**/*.ts"
   ],
   "exclude": [
