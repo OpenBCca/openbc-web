@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "start": "next dev",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "startProduction": "next start"
   },
   "dependencies": {
@@ -26,6 +26,8 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "typescript": "latest"
   }
 }

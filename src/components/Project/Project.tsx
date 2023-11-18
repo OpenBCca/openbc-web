@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { Box, Card, CardContent, Link, Typography } from '@mui/material'
-import {} from 'react'
-import { Link as LinkInterface } from '../../app/dataModels/Link'
-import { Project } from '../../app/dataModels/Project'
+import { Box, Card, CardContent, Link, Typography } from '@mui/material';
+import {} from 'react';
+import { Link as LinkInterface } from '../../app/dataModels/Link';
+import { Project as ProjectObject } from '../../app/dataModels/Project';
 
 export default function Project({
   title,
@@ -13,7 +13,7 @@ export default function Project({
   languages,
   technologies,
   programAreas,
-}: Project) {
+}: ProjectObject) {
   return (
     <Box>
       <Card sx={{ minWidth: 275 }}>
@@ -40,5 +40,5 @@ export default function Project({
         </CardContent>
       </Card>
     </Box>
-  )
+  );
 }
