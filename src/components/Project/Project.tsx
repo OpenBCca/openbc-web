@@ -2,8 +2,8 @@
 
 import { Box, Card, CardContent, Link, Typography } from '@mui/material';
 import {} from 'react';
-import { Link as LinkInterface } from '../../app/dataModels/Link';
-import { Project as ProjectObject } from '../../app/dataModels/Project';
+import { Link as LinkInterface } from '../../app/dataModels/link';
+import { Project as ProjectObject } from '../../app/dataModels/project';
 
 export default function Project({
   title,

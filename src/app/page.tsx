@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import HomePage from './_component/HomePage';
+import { HomePage } from './_component/home-page';
 
 export const metadata: Metadata = {
   title: 'Home | OpenBC',
