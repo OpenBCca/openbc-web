@@ -1,7 +1,12 @@
 'use client';
 
 import { headerStyle } from '@/styles/header-style';
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  Link,
+} from '@mui/material';
 import React from 'react';
 
 function Header() {
@@ -26,13 +31,18 @@ function Header() {
           alignItems: 'center',
         }}
       >
-        <Box
-          sx={{
-            fontSize: 28,
-            fontWeight: '800',
-          }}
-        >
-          OpenBC
+        <Box>
+          <Link
+            href="/"
+            sx={{
+              fontSize: 28,
+              fontWeight: '800',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            OpenBC
+          </Link>
         </Box>
 
         <BottomNavigation
