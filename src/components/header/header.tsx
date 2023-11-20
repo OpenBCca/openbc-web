@@ -47,10 +47,36 @@ function Header() {
             columnGap: '0.4rem',
           }}
         >
-          <BottomNavigationAction label="Projects" sx={headerStyle.link} />
-          <BottomNavigationAction label="Join Us" sx={headerStyle.link} />
-          <BottomNavigationAction label="About" sx={headerStyle.link} />
+          <BottomNavigationAction
+            label="Project"
+            href="/project"
+            sx={headerStyle.link}
+          />
+          <BottomNavigationAction
+            label="Projects"
+            href="/projects"
+            sx={headerStyle.link}
+          />
+          <BottomNavigationAction
+            label="Join Us"
+            href="/join-us"
+            sx={headerStyle.link}
+          />
+          <BottomNavigationAction
+            label="About"
+            href="about"
+            sx={headerStyle.link}
+          />
         </BottomNavigation>
+        <Box
+          component={'nav'}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: '0.4rem',
+            fontWeight: '600',
+          }}
+        ></Box>
       </Box>
     </Box>
   );
