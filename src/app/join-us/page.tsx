@@ -1,7 +1,9 @@
 export default function JoinUs() {
   return (
     <>
-      <h1>Join Us</h1>
+      <div className="centered-elements">
+        <h1>Join Us</h1>
+      </div>
     </>
-  )
+  );
 }
