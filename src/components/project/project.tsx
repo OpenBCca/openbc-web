@@ -3,7 +3,7 @@
 import { Box, Card, CardContent, Link, Typography } from '@mui/material';
 import {} from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
-import { Project as ProjectObject } from '../../app/dataModels/project';
+import { Project as ProjectInterface } from '../../app/dataModels/project';
 
 export default function Project({
   title,
@@ -13,7 +13,9 @@ export default function Project({
   languages,
   technologies,
   programAreas,
-}: ProjectObject) {
+  location,
+  status,
+}: ProjectInterface) {
   return (
     <Box>
       <Card sx={{ minWidth: 275 }}>
@@ -22,6 +24,8 @@ export default function Project({
             {title}
           </Typography>
           <Typography variant="body2">{description}</Typography>
+          {status && <Typography variant="body1">{status}</Typography>}
+          {location && <Typography variant="body1">{location}</Typography>}
           <Typography variant="h6">
             {links.map((link: LinkInterface, idx: number) => (
               <Link href={link.url} key={`project-link-${idx}`}>
