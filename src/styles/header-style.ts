@@ -1,4 +1,4 @@
-export const header_style = {
+export const headerStyle = {
   link: {
     fontSize: 14,
     fontWeight: '600',
@@ -19,4 +19,4 @@ export const header_style = {
     },
     transition: 'all 240ms cubic-bezier(0.4, 0.4, 0.4, 0.4)',
   },
-}
+};
