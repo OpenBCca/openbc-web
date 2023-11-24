@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next dev",
     "lint": "next lint --fix",
+    "lint:check": "next lint --fix",
     "startProduction": "next start"
   },
   "dependencies": {
