@@ -1,13 +1,11 @@
-'use client'
+'use client';
 
-import { header_style } from '@/styles/header-style'
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
-import React from 'react'
+import { headerStyle } from '@/styles/header-style';
+import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
+import React from 'react';
 
-interface Props {}
-
-function Header({}: Props) {
-  const [value, setValue] = React.useState(0)
+function Header() {
+  const [value, setValue] = React.useState(0);
   return (
     <Box
       component={'header'}
@@ -40,8 +38,8 @@ function Header({}: Props) {
         <BottomNavigation
           showLabels
           value={value}
-          onChange={(event, newValue: number) => {
-            setValue(newValue)
+          onChange={(event, newValue: any) => {
+            setValue(newValue);
           }}
           sx={{
             display: 'flex',
@@ -49,13 +47,13 @@ function Header({}: Props) {
             columnGap: '0.4rem',
           }}
         >
-          <BottomNavigationAction label="Projects" sx={header_style.link} />
-          <BottomNavigationAction label="Join Us" sx={header_style.link} />
-          <BottomNavigationAction label="About" sx={header_style.link} />
+          <BottomNavigationAction label="Projects" sx={headerStyle.link} />
+          <BottomNavigationAction label="Join Us" sx={headerStyle.link} />
+          <BottomNavigationAction label="About" sx={headerStyle.link} />
         </BottomNavigation>
       </Box>
     </Box>
-  )
+  );
 }
 
-export default Header
+export default Header;
