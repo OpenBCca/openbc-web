@@ -1,40 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header snapshot test renders header unchanged 1`] = `
+exports[`Header snapshot test should render header unchanged 1`] = `
 <div>
   <header
     class="MuiBox-root css-sdwowb"
   >
     <div
-      class="MuiBox-root css-1vk2f7t"
+      class="MuiBox-root css-1s56th"
     >
       <div
         class="MuiBox-root css-ziu5zu"
       >
         OpenBC
       </div>
-      <nav
-        class="MuiBox-root css-g4rlas"
+      <div
+        class="MuiBottomNavigation-root css-w3uaz-MuiBottomNavigation-root"
       >
-        <a
-          class="MuiBox-root css-18wy14r"
-          href=""
+        <button
+          class="MuiButtonBase-root MuiBottomNavigationAction-root Mui-selected css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
+          tabindex="0"
+          type="button"
         >
-          Projects
-        </a>
-        <a
-          class="MuiBox-root css-18wy14r"
-          href=""
+          <span
+            class="MuiBottomNavigationAction-label Mui-selected css-imwso6-MuiBottomNavigationAction-label"
+          >
+            Projects
+          </span>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiBottomNavigationAction-root css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
+          tabindex="0"
+          type="button"
         >
-          Join Us
-        </a>
-        <a
-          class="MuiBox-root css-18wy14r"
-          href=""
+          <span
+            class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
+          >
+            Join Us
+          </span>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiBottomNavigationAction-root css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
+          tabindex="0"
+          type="button"
         >
-          About
-        </a>
-      </nav>
+          <span
+            class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
+          >
+            About
+          </span>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
     </div>
   </header>
 </div>
