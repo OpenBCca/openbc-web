@@ -1,7 +1,4 @@
 module.exports = {
-  env: {
-    jest: true,
-  },
   extends: [
     'plugin:@typescript-eslint/recommended',
     'next',
