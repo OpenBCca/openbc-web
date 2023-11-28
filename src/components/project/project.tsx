@@ -5,9 +5,6 @@ import React from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
 import { Project as ProjectInterface } from '../../app/dataModels/project';
 
-const moreInformationStyles = {
-  marginTop: '1% 0',
-};
 export default function Project({
   title,
   description,
