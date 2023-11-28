@@ -12,6 +12,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   root: true,
+  "ignorePatterns": [".eslintrc.cjs"],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
