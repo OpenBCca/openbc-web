@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Card, CardContent, Link, Typography } from '@mui/material';
-import {} from 'react';
+import React from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
 import { Project as ProjectObject } from '../../app/dataModels/project';
 
