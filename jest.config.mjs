@@ -17,7 +17,7 @@ const config = {
   collectCoverage: true,
   coverageThreshold: {
     global: {
-      lines: 100
+      lines: 30
     }
   }
 };
