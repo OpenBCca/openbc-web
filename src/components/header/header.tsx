@@ -1,7 +1,12 @@
 'use client';
 
 import { headerStyle } from '@/styles/header-style';
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  Link,
+} from '@mui/material';
 import React from 'react';
 
 function Header() {
@@ -26,13 +31,18 @@ function Header() {
           alignItems: 'center',
         }}
       >
-        <Box
-          sx={{
-            fontSize: 28,
-            fontWeight: '800',
-          }}
-        >
-          OpenBC
+        <Box>
+          <Link
+            href="/"
+            sx={{
+              fontSize: 28,
+              fontWeight: '800',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            OpenBC
+          </Link>
         </Box>
 
         <BottomNavigation
@@ -47,10 +57,36 @@ function Header() {
             columnGap: '0.4rem',
           }}
         >
-          <BottomNavigationAction label="Projects" sx={headerStyle.link} />
-          <BottomNavigationAction label="Join Us" sx={headerStyle.link} />
-          <BottomNavigationAction label="About" sx={headerStyle.link} />
+          <BottomNavigationAction
+            label="Project"
+            href="/project"
+            sx={headerStyle.link}
+          />
+          <BottomNavigationAction
+            label="Projects"
+            href="/projects"
+            sx={headerStyle.link}
+          />
+          <BottomNavigationAction
+            label="Join Us"
+            href="/join-us"
+            sx={headerStyle.link}
+          />
+          <BottomNavigationAction
+            label="About"
+            href="about"
+            sx={headerStyle.link}
+          />
         </BottomNavigation>
+        <Box
+          component={'nav'}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: '0.4rem',
+            fontWeight: '600',
+          }}
+        ></Box>
       </Box>
     </Box>
   );
