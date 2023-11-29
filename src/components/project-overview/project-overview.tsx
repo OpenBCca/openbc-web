@@ -1,4 +1,4 @@
-import { Card, Container, Grid } from '@mui/material';
+import { Card, Grid } from '@mui/material';
 import Project from '@/components/project/project';
 import { Link } from '@/app/dataModels/link';
 import { ProjectStatusTypes } from '@/app/dataModels/project';
@@ -16,7 +16,7 @@ export function ProjectOverview() {
       spacing={0}
       alignItems="center"
       justifyContent="center"
-      sx={{ backgroundColor: '#ededed'}}
+      sx={{ backgroundColor: '#ededed' }}
     >
       <Grid item>
         <Card
