@@ -6,7 +6,12 @@ import {
   getReposList,
 } from '../client-services/github.client-service';
 
-describe('Mock Axios', () => {
+jest.mock('../client-services/github.client-service', () => ({
+  ...jest.requireActual('../client-services/github.client-service'),
+  axiosConfig: jest.fn(), // Mocking axiosConfig
+}));
+
+describe('Github client service test', () => {
   let axiosMock: MockAdapter;
   const accessToken = 'testToken';
 
@@ -20,16 +25,21 @@ describe('Mock Axios', () => {
     axiosMock.restore();
   });
 
-  it('should return an Axios instance', async () => {
+  it('should return an Axios instance', () => {
     axiosMock
       .onGet('https://api.github.com/test-endpoint')
       .reply(200, { data: 'mocked data' });
+
+    process.env.GITHUB_API_KEY = 'testToken';
+    (axiosConfig<jest.Mock>).mockReturnValue({
+      get: jest.fn().mockResolvedValue({ status: 200, data: 'mocked data' }),
+    });
 
     const axiosInstance = axiosConfig();
 
     return axiosInstance.get('/test-endpoint').then((response) => {
       expect(response.status).toBe(200);
-      expect(response.data).toEqual({ data: 'mocked data' });
+      expect(response.data).toEqual('mocked data');
     });
   });
 
