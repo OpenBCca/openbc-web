@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import {
   axiosConfig,
@@ -8,35 +8,33 @@ import {
 
 describe('Mock Axios', () => {
   let axiosMock: MockAdapter;
-  let mockResponse: AxiosResponse | object | null;
-
   const accessToken = process.env.GITHUB_API_KEY;
 
+  // Set new axios mock before each test
   beforeEach(() => {
     axiosMock = new MockAdapter(axios);
   });
 
+  // Remove axios mockafter each test
   afterEach(() => {
     axiosMock.restore();
-    mockResponse = null;
   });
 
-  it('should get axios config', async () => {
-    mockResponse = { data: 'mocked data' };
+  it('should return an Axios instance', async () => {
     axiosMock
       .onGet('https://api.github.com/test-endpoint')
-      .reply(200, mockResponse);
+      .reply(200, { data: 'mocked data' });
 
     const axiosInstance = axiosConfig();
 
     return axiosInstance.get('/test-endpoint').then((response) => {
       expect(response.status).toBe(200);
-      expect(response.data).toEqual(mockResponse);
+      expect(response.data).toEqual({ data: 'mocked data' });
     });
   });
 
   describe('Github API calls', () => {
-    mockResponse = {
+    const mockResponse = {
       data: [{ name: 'openbc-web' }],
       baseURL: 'https://api.github.com',
       headers: {
