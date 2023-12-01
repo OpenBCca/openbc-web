@@ -8,7 +8,7 @@ import {
 
 describe('Mock Axios', () => {
   let axiosMock: MockAdapter;
-  const accessToken = process.env.GITHUB_API_KEY;
+  const accessToken = 'testToken';
 
   // Set new axios mock before each test
   beforeEach(() => {
