@@ -1,9 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import getConfig from 'next/config';
 
-function axiosConfig(): AxiosInstance {
-  const config = getConfig();
-  const accessToken: string | undefined = config.githubApiToken;
+export function axiosConfig(): AxiosInstance {
+  const accessToken: string | undefined = process.env.GITHUB_API_KEY;
 
   if (!accessToken) {
     throw new Error('GitHub access token is not provided.');
@@ -16,7 +14,6 @@ function axiosConfig(): AxiosInstance {
       'Content-Type': 'application/json',
     },
   });
-
   return axiosInstance;
 }
 
