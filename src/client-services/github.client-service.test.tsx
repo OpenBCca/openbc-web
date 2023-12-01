@@ -15,7 +15,7 @@ describe('Mock Axios', () => {
     axiosMock = new MockAdapter(axios);
   });
 
-  // Remove axios mockafter each test
+  // Remove axios mock after each test
   afterEach(() => {
     axiosMock.restore();
   });
