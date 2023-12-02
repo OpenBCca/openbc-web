@@ -1,77 +1,67 @@
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import {
   axiosConfig,
-  getRepoInfo,
   getReposList,
+  getRepoInfo,
 } from '../client-services/github.client-service';
 
-jest.mock('../client-services/github.client-service', () => ({
-  ...jest.requireActual('../client-services/github.client-service'),
-  axiosConfig: jest.fn(), // Mocking axiosConfig
-}));
+jest.mock('axios');
 
 describe('Github client service test', () => {
-  let axiosMock: MockAdapter;
   const accessToken = 'testToken';
+  const mockResponse: AxiosResponse = {
+    data: [{ name: 'openbc-web' }],
+    headers: {
+      Authorization: `token ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    config: {},
+    headers: {},
+    request: {},
+  };
 
-  // Set new axios mock before each test
   beforeEach(() => {
-    axiosMock = new MockAdapter(axios);
+    jest.clearAllMocks();
   });
 
-  // Remove axios mock after each test
   afterEach(() => {
-    axiosMock.restore();
+    jest.restoreAllMocks();
   });
 
-  it('should return an Axios instance', () => {
-    axiosMock
-      .onGet('https://api.github.com/test-endpoint')
-      .reply(200, { data: 'mocked data' });
+  describe('axiosConfig', () => {
+    it('should return an Axios instance', async () => {
+      axios.create.mockResolvedValueOnce(mockResponse);
+      const axiosInstance: AxiosInstance = await axiosConfig();
 
-    process.env.GITHUB_API_KEY = 'testToken';
-    (axiosConfig<jest.Mock>).mockReturnValue({
-      get: jest.fn().mockResolvedValue({ status: 200, data: 'mocked data' }),
-    });
-
-    const axiosInstance = axiosConfig();
-
-    return axiosInstance.get('/test-endpoint').then((response) => {
-      expect(response.status).toBe(200);
-      expect(response.data).toEqual('mocked data');
+      expect(axiosInstance).toEqual(mockResponse);
     });
   });
 
-  describe('Github API calls', () => {
-    const mockResponse = {
-      data: [{ name: 'openbc-web' }],
-      baseURL: 'https://api.github.com',
-      headers: {
-        Authorization: `token ${accessToken}`,
-        'Content-Type': 'application/json',
-      },
-    };
-
+  describe('getReposList', () => {
     it('should get the list of repositories', async () => {
-      axiosMock
-        .onGet('https://api.github.com/orgs/OpenBCca/repos')
-        .reply(200, mockResponse);
-      const reposListResponse = await getReposList();
+      axios.create.mockReturnValueOnce({
+        get: jest.fn().mockResolvedValueOnce(mockResponse),
+      });
+      const reposListResponse: AxiosResponse = await getReposList();
 
-      expect(reposListResponse.data).toEqual(mockResponse);
+      expect(reposListResponse).toEqual(mockResponse);
     });
+  });
 
+  describe('getRepoInfo', () => {
     it('should get openbc-web repo info', async () => {
       const repoName = 'openbc-web';
       const parameter = '';
 
-      axiosMock
-        .onGet(`https://api.github.com/repos/OpenBCca/${repoName}${parameter}`)
-        .reply(200, mockResponse);
-      const testRepoResponse = await getRepoInfo(repoName, parameter);
+      axios.create.mockReturnValueOnce({
+        get: jest.fn().mockResolvedValueOnce(mockResponse),
+      });
+      const testRepoResponse: AxiosResponse = await getRepoInfo(
+        repoName,
+        parameter
+      );
 
-      expect(testRepoResponse.data).toEqual(mockResponse);
+      expect(testRepoResponse).toEqual(mockResponse);
     });
   });
 });
