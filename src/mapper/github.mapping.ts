@@ -1,41 +1,55 @@
-import { getReposList, getRepoInfo } from '../client-services/github.client-service'
+ 
+interface RepositoryInfo {
+  name: string;
+  description: string;
+  url: string;
+  languages: string[];
+  language: string;
+  contributors: { name: string; avatarUrl: string }[];
+}
 
-interface Repos {
-    name: string;
+
+function repository (
+    repositoryName: string, 
+    description: string, 
+    url: string, 
+    langs: string[], 
+    lang: string, 
+    contributorsName: string[], 
+    contributorsAvatarUrl: string[]
+  ): RepositoryInfo {
+  const contributorsInfo = contributorsName.map((name, index) => ({
+    name,
+    avatarUrl: contributorsAvatarUrl[index],
+  }));
+                    
+  return {
+    name: repositoryName,
+    description: description,
+    url: url,
+    languages: langs,
+    language: lang,
+    contributors: contributorsInfo,
   }
-  
-  interface RepoInfo {
-    name: string;
-    description?: string;
-    url: string;
-    languages: string[];
-    language: string;
-    contributors: { name: string; avatarUrl: string }[];
-  }
-  
-  async function mapRepoInfo(repo: Repos): Promise<RepoInfo> {
-    const repoInfoResponse = await getRepoInfo(repo.name);
-    const data = repoInfoResponse.data;
-  
-    const languagesResponse = await getRepoInfo(repo.name, '/languages');
-    const contributorsResponse = await getRepoInfo(repo.name, '/contributors');
-  
-    return {
-      name: repo.name,
-      description: data.description,
-      url: data.url,
-      languages: Object.keys(languagesResponse.data),
-      language: data.language,
-      contributors: contributorsResponse.data.map((contributor: any) => ({
-        name: contributor.login,
-        avatarUrl: contributor.avatarUrl,
-      })),
-    };
-  }
-  
-  async function githubMapper(): Promise<RepoInfo[]> {
-    const reposListResponse = await getReposList();
-    const repos: Repos[] = reposListResponse.data.map((repo: any) => ({ name: repo.name }));
-    const repoPromises = await repos.map(mapRepoInfo);
-    return Promise.all(repoPromises);
-  }
+}
+
+
+function repositories(
+    repositoryNames: string[], 
+    description: string[], 
+    url: string[], 
+    langs: string[][], 
+    lang: string[], 
+    contributorsName: string[][], 
+    contributorsAvatarUrl: string[][]
+  ): RepositoryInfo[] {
+  return repositoryNames.map((repositoryName, index) => repository(
+    repositoryName[index], 
+    description[index], 
+    url[index], 
+    langs[index], 
+    lang[index], 
+    contributorsName[index], 
+    contributorsAvatarUrl[index]
+  ));
+}
