@@ -22,10 +22,12 @@ describe('Github client service test', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    process.env.GITHUB_API_KEY = 'testToken';
   });
 
   afterEach(() => {
     jest.restoreAllMocks();
+    delete process.env.GITHUB_API_KEY;
   });
 
   describe('axiosConfig', () => {
