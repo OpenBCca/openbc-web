@@ -58,21 +58,25 @@ function Header() {
           }}
         >
           <BottomNavigationAction
+            role="button"
             label="Project"
             href="/project"
             sx={headerStyle.link}
           />
           <BottomNavigationAction
+            role="button"
             label="Projects"
             href="/projects"
             sx={headerStyle.link}
           />
           <BottomNavigationAction
+            role="button"
             label="Join Us"
             href="/join-us"
             sx={headerStyle.link}
           />
           <BottomNavigationAction
+            role="button"
             label="About"
             href="about"
             sx={headerStyle.link}
