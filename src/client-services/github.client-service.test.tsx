@@ -36,6 +36,24 @@ describe('Github client service test', () => {
 
       expect(axiosInstance).toEqual(mockResponse);
     });
+
+    it('should throw error if Github access token is not provided', () => {
+      process.env.GITHUB_API_KEY = undefined;
+      axios.create = jest.fn().mockReturnValue(mockResponse);
+      try {
+        getAxiosInstance();
+      } catch (error) {
+        let message;
+        // Specify message only when error type is defined as Error
+        if (error instanceof Error) {
+          message = error.message;
+        } else {
+          message = String(error);
+        }
+
+        expect(message).toBe('GitHub access token is not provided.');
+      }
+    });
   });
 
   describe('getRepositoryList', () => {
