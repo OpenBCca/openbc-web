@@ -1,22 +1,21 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import {
   getAxiosInstance,
-  getRepositoryList,
   getRepositoryInformation,
+  getRepositoryList,
 } from '../client-services/github.client-service';
 
 jest.mock('axios');
 
 describe('Github client service test', () => {
   const accessToken = 'testToken';
-  const mockResponse: AxiosResponse = {
+  const mockResponse = {
     data: [{ name: 'openbc-web' }],
     headers: {
       Authorization: `token ${accessToken}`,
       'Content-Type': 'application/json',
     },
     config: {},
-    headers: {},
     request: {},
   };
   const originalEnv = process.env;
@@ -31,9 +30,9 @@ describe('Github client service test', () => {
   });
 
   describe('getAxiosInstance', () => {
-    it('should return an Axios instance', async () => {
-      axios.create.mockResolvedValueOnce(mockResponse);
-      const axiosInstance: AxiosInstance = await getAxiosInstance();
+    it('should return an Axios instance', () => {
+      axios.create = jest.fn().mockReturnValue(mockResponse);
+      const axiosInstance: AxiosInstance = getAxiosInstance();
 
       expect(axiosInstance).toEqual(mockResponse);
     });
@@ -41,7 +40,7 @@ describe('Github client service test', () => {
 
   describe('getRepositoryList', () => {
     it('should get the list of repositories', async () => {
-      axios.create.mockReturnValueOnce({
+      axios.create = jest.fn().mockReturnValue({
         get: jest.fn().mockResolvedValueOnce(mockResponse),
       });
       const reposListResponse: AxiosResponse = await getRepositoryList();
@@ -55,7 +54,7 @@ describe('Github client service test', () => {
       const repositoryName = 'openbc-web';
       const parameter = '';
 
-      axios.create.mockReturnValueOnce({
+      axios.create = jest.fn().mockReturnValue({
         get: jest.fn().mockResolvedValueOnce(mockResponse),
       });
       const testRepoResponse: AxiosResponse = await getRepositoryInformation(
