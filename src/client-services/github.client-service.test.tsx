@@ -19,13 +19,15 @@ describe('Github client service test', () => {
     headers: {},
     request: {},
   };
+  const originalEnv = process.env;
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    jest.resetModules();
+    process.env = { ...originalEnv, GITHUB_API_KEY: 'testApiKey' };
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    process.env = originalEnv;
   });
 
   describe('getAxiosInstance', () => {
