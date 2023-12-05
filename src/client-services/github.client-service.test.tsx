@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios from 'axios';
 import {
   getAxiosInstance,
   getRepositoryInformation,
@@ -15,8 +15,6 @@ describe('Github client service test', () => {
       Authorization: `token ${accessToken}`,
       'Content-Type': 'application/json',
     },
-    config: {},
-    request: {},
   };
   const originalEnv = process.env;
 
@@ -32,7 +30,7 @@ describe('Github client service test', () => {
   describe('getAxiosInstance', () => {
     it('should return an Axios instance', () => {
       axios.create = jest.fn().mockReturnValue(mockResponse);
-      const axiosInstance: AxiosInstance = getAxiosInstance();
+      const axiosInstance = getAxiosInstance();
 
       expect(axiosInstance).toEqual(mockResponse);
     });
@@ -61,7 +59,7 @@ describe('Github client service test', () => {
       axios.create = jest.fn().mockReturnValue({
         get: jest.fn().mockResolvedValueOnce(mockResponse),
       });
-      const reposListResponse: AxiosResponse = await getRepositoryList();
+      const reposListResponse = await getRepositoryList();
 
       expect(reposListResponse).toEqual(mockResponse);
     });
@@ -75,7 +73,7 @@ describe('Github client service test', () => {
       axios.create = jest.fn().mockReturnValue({
         get: jest.fn().mockResolvedValueOnce(mockResponse),
       });
-      const testRepoResponse: AxiosResponse = await getRepositoryInformation(
+      const testRepoResponse = await getRepositoryInformation(
         repositoryName,
         parameter
       );
