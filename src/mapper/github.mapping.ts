@@ -1,55 +1,46 @@
- 
-interface RepositoryInfo {
-  name: string;
-  description: string;
-  url: string;
-  languages: string[];
-  language: string;
-  contributors: { name: string; avatarUrl: string }[];
+import {
+  getRepoInfo,
+  getReposList,
+} from '../client-services/github.client-service'
+
+interface Repos {
+  name: string
 }
 
+// interface RepoInfo {
+//   name: string
+//   description?: string
+//   url: string
+//   languages: string[]
+//   language: string
+//   contributors: { name: string; avatarUrl: string }[]
+// }
 
-function repository (
-    repositoryName: string, 
-    description: string, 
-    url: string, 
-    langs: string[], 
-    lang: string, 
-    contributorsName: string[], 
-    contributorsAvatarUrl: string[]
-  ): RepositoryInfo {
-  const contributorsInfo = contributorsName.map((name, index) => ({
-    name,
-    avatarUrl: contributorsAvatarUrl[index],
-  }));
-                    
+export async function mapRepoInfo(repo: Repos) {
+  const repoInfoResponse = await getRepoInfo(repo.name)
+  const data = repoInfoResponse.data
+
+  const languagesResponse = await getRepoInfo(repo.name, '/languages')
+  const contributorsResponse = await getRepoInfo(repo.name, '/contributors')
+
   return {
-    name: repositoryName,
-    description: description,
-    url: url,
-    languages: langs,
-    language: lang,
-    contributors: contributorsInfo,
+    name: repo.name,
+    description: data.description,
+    url: data.url,
+    languages: Object.keys(languagesResponse.data),
+    language: data.language,
+    contributors: contributorsResponse.data.map((contributor: any) => ({
+      name: contributor.login,
+      avatarUrl: contributor.avatarUrl,
+    })),
   }
 }
 
-
-function repositories(
-    repositoryNames: string[], 
-    description: string[], 
-    url: string[], 
-    langs: string[][], 
-    lang: string[], 
-    contributorsName: string[][], 
-    contributorsAvatarUrl: string[][]
-  ): RepositoryInfo[] {
-  return repositoryNames.map((repositoryName, index) => repository(
-    repositoryName[index], 
-    description[index], 
-    url[index], 
-    langs[index], 
-    lang[index], 
-    contributorsName[index], 
-    contributorsAvatarUrl[index]
-  ));
+export function mapProjects(repositories: any[]) {
+  const reposListResponse = getReposList()
+  const repos: Repos[] = reposListResponse.data.map((repo: any) => ({
+    name: repo.name,
+  }))
+  const repoPromises = repos.map(mapRepoInfo)
+  return Promise.all(repoPromises)
 }
