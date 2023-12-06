@@ -1,9 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import getConfig from 'next/config';
 
-function axiosConfig(): AxiosInstance {
-  const config = getConfig();
-  const accessToken: string | undefined = config.githubApiToken;
+export function getAxiosInstance(): AxiosInstance {
+  const accessToken: string | undefined = process.env.GITHUB_API_KEY;
 
   if (!accessToken) {
     throw new Error('GitHub access token is not provided.');
@@ -16,23 +14,22 @@ function axiosConfig(): AxiosInstance {
       'Content-Type': 'application/json',
     },
   });
-
   return axiosInstance;
 }
 
-export async function getReposList(): Promise<AxiosResponse> {
-  const response: AxiosResponse = await axiosConfig().get(
+export async function getRepositoryList(): Promise<AxiosResponse> {
+  const response: AxiosResponse = await getAxiosInstance().get(
     '/orgs/OpenBCca/repos'
   );
   return response;
 }
 
-export async function getRepoInfo(
-  repoName: string,
+export async function getRepositoryInformation(
+  repositoryName: string,
   parameter = ''
 ): Promise<AxiosResponse> {
-  const response = await axiosConfig().get(
-    `/repos/OpenBCca/${repoName}${parameter}`
+  const response = await getAxiosInstance().get(
+    `/repos/OpenBCca/${repositoryName}${parameter}`
   );
   return response;
 }
