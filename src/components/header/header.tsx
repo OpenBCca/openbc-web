@@ -44,7 +44,6 @@ function Header() {
             OpenBC
           </Link>
         </Box>
-
         <BottomNavigation
           showLabels
           value={value}
@@ -59,27 +58,30 @@ function Header() {
         >
           <BottomNavigationAction
             role="button"
-            label="Project"
-            href="/project"
-            sx={headerStyle.link}
-          />
-          <BottomNavigationAction
-            role="button"
             label="Projects"
             href="/projects"
-            sx={headerStyle.link}
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit', // Change color for current page
+            }}
           />
           <BottomNavigationAction
             role="button"
             label="Join Us"
             href="/join-us"
-            sx={headerStyle.link}
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit', // Change color for current page
+            }}
           />
           <BottomNavigationAction
             role="button"
             label="About"
-            href="about"
-            sx={headerStyle.link}
+            href="/about"
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit', // Change color for current page
+            }}
           />
         </BottomNavigation>
         <Box
