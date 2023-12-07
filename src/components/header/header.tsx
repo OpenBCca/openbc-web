@@ -1,16 +1,10 @@
 'use client';
 
 import { headerStyle } from '@/styles/header-style';
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Box,
-  Link,
-} from '@mui/material';
+import { Tabs, Tab, Box, Link } from '@mui/material';
 import React from 'react';
 
 function Header() {
-  const [value, setValue] = React.useState(0);
   return (
     <Box
       component={'header'}
@@ -44,46 +38,41 @@ function Header() {
             OpenBC
           </Link>
         </Box>
-        <BottomNavigation
-          showLabels
-          value={value}
-          onChange={(event, newValue: any) => {
-            setValue(newValue);
-          }}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            columnGap: '0.4rem',
-          }}
-        >
-          <BottomNavigationAction
-            role="button"
+        <Tabs>
+          <Tab
             label="Projects"
+            value="/projects"
             href="/projects"
+            role="button"
             sx={{
               ...headerStyle.link,
-              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit', // Change color for current page
+              color: location.pathname === '/projects' ? '#2563eb' : 'inherit',
             }}
+            component={Link}
           />
-          <BottomNavigationAction
-            role="button"
+          <Tab
             label="Join Us"
+            value="/join-us"
             href="/join-us"
-            sx={{
-              ...headerStyle.link,
-              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit', // Change color for current page
-            }}
-          />
-          <BottomNavigationAction
             role="button"
-            label="About"
-            href="/about"
             sx={{
               ...headerStyle.link,
-              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit', // Change color for current page
+              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit',
             }}
+            component={Link}
           />
-        </BottomNavigation>
+          <Tab
+            label="About"
+            value="/about"
+            href="/about"
+            role="button"
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/about' ? '#2563eb' : 'inherit',
+            }}
+            component={Link}
+          />
+        </Tabs>
         <Box
           component={'nav'}
           sx={{
