@@ -19,68 +19,58 @@ exports[`Header snapshot test should render header unchanged 1`] = `
         </a>
       </div>
       <div
-        class="MuiBottomNavigation-root css-w3uaz-MuiBottomNavigation-root"
+        class="MuiTabs-root css-1ujnqem-MuiTabs-root"
       >
-        <a
-          class="MuiButtonBase-root MuiBottomNavigationAction-root Mui-selected css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
-          href="/project"
-          role="button"
-          tabindex="0"
+        <div
+          class="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+          style="overflow: hidden; margin-bottom: 0px;"
         >
-          <span
-            class="MuiBottomNavigationAction-label Mui-selected css-imwso6-MuiBottomNavigationAction-label"
+          <div
+            class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+            role="tablist"
           >
-            Project
-          </span>
+            <a
+              aria-selected="false"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-f9yp0h-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
+              href="/projects"
+              role="button"
+              tabindex="-1"
+            >
+              Projects
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </a>
+            <a
+              aria-selected="false"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-f9yp0h-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
+              href="/join-us"
+              role="button"
+              tabindex="-1"
+            >
+              Join Us
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </a>
+            <a
+              aria-selected="false"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-f9yp0h-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
+              href="/about"
+              role="button"
+              tabindex="-1"
+            >
+              About
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </a>
+          </div>
           <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            class="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+            style="left: 0px; width: 0px;"
           />
-        </a>
-        <a
-          class="MuiButtonBase-root MuiBottomNavigationAction-root css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
-          href="/projects"
-          role="button"
-          tabindex="0"
-        >
-          <span
-            class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
-          >
-            Projects
-          </span>
-          <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </a>
-        <a
-          class="MuiButtonBase-root MuiBottomNavigationAction-root css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
-          href="/join-us"
-          role="button"
-          tabindex="0"
-        >
-          <span
-            class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
-          >
-            Join Us
-          </span>
-          <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </a>
-        <a
-          class="MuiButtonBase-root MuiBottomNavigationAction-root css-13m47w6-MuiButtonBase-root-MuiBottomNavigationAction-root"
-          href="about"
-          role="button"
-          tabindex="0"
-        >
-          <span
-            class="MuiBottomNavigationAction-label css-imwso6-MuiBottomNavigationAction-label"
-          >
-            About
-          </span>
-          <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </a>
+        </div>
       </div>
       <nav
         class="MuiBox-root css-g4rlas"
