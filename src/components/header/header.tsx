@@ -1,11 +1,10 @@
 'use client';
 
 import { headerStyle } from '@/styles/header-style';
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
+import { Tabs, Tab, Box, Link } from '@mui/material';
 import React from 'react';
 
 function Header() {
-  const [value, setValue] = React.useState(0);
   return (
     <Box
       component={'header'}
@@ -26,31 +25,63 @@ function Header() {
           alignItems: 'center',
         }}
       >
-        <Box
-          sx={{
-            fontSize: 28,
-            fontWeight: '800',
-          }}
-        >
-          OpenBC
+        <Box>
+          <Link
+            href="/"
+            sx={{
+              fontSize: 28,
+              fontWeight: '800',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            OpenBC
+          </Link>
         </Box>
-
-        <BottomNavigation
-          showLabels
-          value={value}
-          onChange={(event, newValue: any) => {
-            setValue(newValue);
-          }}
+        <Tabs>
+          <Tab
+            label="Projects"
+            value="/projects"
+            href="/projects"
+            role="button"
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/projects' ? '#2563eb' : 'inherit',
+            }}
+            component={Link}
+          />
+          <Tab
+            label="Join Us"
+            value="/join-us"
+            href="/join-us"
+            role="button"
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit',
+            }}
+            component={Link}
+          />
+          <Tab
+            label="About"
+            value="/about"
+            href="/about"
+            role="button"
+            sx={{
+              ...headerStyle.link,
+              color: location.pathname === '/about' ? '#2563eb' : 'inherit',
+            }}
+            component={Link}
+          />
+        </Tabs>
+        <Box
+          component={'nav'}
           sx={{
             display: 'flex',
             alignItems: 'center',
             columnGap: '0.4rem',
+            fontWeight: '600',
           }}
-        >
-          <BottomNavigationAction label="Projects" sx={headerStyle.link} />
-          <BottomNavigationAction label="Join Us" sx={headerStyle.link} />
-          <BottomNavigationAction label="About" sx={headerStyle.link} />
-        </BottomNavigation>
+        ></Box>
       </Box>
     </Box>
   );
