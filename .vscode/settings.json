@@ -12,5 +12,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "typescript.preferences.quoteStyle": "single",
   "editor.wordWrap": "on",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.eol": "\n",
 }
