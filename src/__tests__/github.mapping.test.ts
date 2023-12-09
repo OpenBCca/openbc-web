@@ -10,7 +10,7 @@ describe('mapProject', () => {
     };
     const languages = ['Python', 'JavaScript'];
     const contributors = [
-      { login: 'johndoe', avatarUrl: 'https://example.com/avatar.png' },
+      { name: 'johndoe', avatarUrl: 'https://example.com/avatar.png' },
     ];
 
     const project = mapProject(repository, languages, contributors);
@@ -50,24 +50,22 @@ describe('mapProjects', () => {
     };
     const repositoriesContributors = {
       'test-repo1': [
-        { login: 'janedoe', avatarUrl: 'https://example.com/avatar2.png' },
+        { name: 'janedoe', avatarUrl: 'https://example.com/avatar1.png' },
+        { name: 'sarahdoe', avatarUrl: 'https://example.com/avatar2.png' },
       ],
       'test-repo2': [
-        {
-          login: 'johndoe',
-          avatarUrl: 'https://example.com/johndoe_avatar.png',
-        },
+        { name: 'johndoe', avatarUrl: 'https://example.com/avatar.png' },
       ],
     };
-    const repositoriesLanguagesArray = Object.values(repositoriesLanguages);
-    const repositoriesContributorsArray = Object.values(
-      repositoriesContributors
-    );
+    // const repositoriesLanguagesArray = Object.values(repositoriesLanguages);
+    // const repositoriesContributorsArray = Object.values(
+    //   repositoriesContributors
+    // ).flat();
 
     const projects = mapProjects(
       repositories,
-      repositoriesLanguagesArray,
-      repositoriesContributorsArray
+      repositoriesLanguages,
+      repositoriesContributors
     );
 
     expect(projects).toEqual([
@@ -77,7 +75,8 @@ describe('mapProjects', () => {
         url: 'https://github.com/test/test-repo1',
         language: 'Python',
         contributors: [
-          { name: 'janedoe', avatarUrl: 'https://example.com/avatar2.png' },
+          { name: 'janedoe', avatarUrl: 'https://example.com/avatar1.png' },
+          { name: 'sarahdoe', avatarUrl: 'https://example.com/avatar2.png' },
         ],
         languages: ['Python', 'JavaScript'],
       },
@@ -87,10 +86,7 @@ describe('mapProjects', () => {
         url: 'https://github.com/test/test-repo2',
         language: 'JavaScript',
         contributors: [
-          {
-            name: 'johndoe',
-            avatarUrl: 'https://example.com/johndoe_avatar.png',
-          },
+          { name: 'johndoe', avatarUrl: 'https://example.com/avatar.png' },
         ],
         languages: ['JavaScript', 'CSS', 'HTML'],
       },

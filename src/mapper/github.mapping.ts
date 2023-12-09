@@ -8,8 +8,8 @@ export function mapProject(
     description: repository.description,
     url: repository.url,
     language: repository.language,
-    contributors: contributors.map((contributor: any) => ({
-      name: contributor.login,
+    contributors: contributors?.map((contributor: any) => ({
+      name: contributor.name,
       avatarUrl: contributor.avatarUrl,
     })),
     languages: languages,
