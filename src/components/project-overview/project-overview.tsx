@@ -1,4 +1,4 @@
-import { Card, Grid } from '@mui/material';
+import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import Project from '@/components/project/project';
 import { Link } from '@/app/dataModels/link';
 import { ProjectStatusTypes } from '@/app/dataModels/project';
@@ -7,16 +7,17 @@ const linksForProjectOverview: Link[] = [
   { title: 'GitHub', url: 'https://github.com/OpenBCca/openbc-web' },
 ];
 
-const languagesForProjectOverview = ['typescript'];
+const languagesForProjectOverview = ['Typescript'];
 
 export function ProjectOverview() {
   return (
     <Grid
       container
-      spacing={0}
+      spacing={1}
       alignItems="center"
       justifyContent="center"
       sx={{ backgroundColor: '#ededed' }}
+      direction="column"
     >
       <Grid item>
         <Card
@@ -34,6 +35,33 @@ export function ProjectOverview() {
             status={ProjectStatusTypes.active}
             location={'Remote'}
           />
+        </Card>
+      </Grid>
+      <Grid item>
+        <Card
+          sx={{
+            maxWidth: 700,
+          }}
+        >
+          <CardContent>
+            <Typography variant="h4">Current Project Team</Typography>
+            <Typography paragraph={true} variant="body2">
+              {' '}
+              Sam Huo - President
+            </Typography>
+            <Typography paragraph={true} variant="body2">
+              {' '}
+              Toki  - Vice President
+            </Typography>
+            <Typography paragraph={true} variant="body2">
+              {' '}
+              Mangat Toor - Developer
+            </Typography>
+            <Typography paragraph={true} variant="body2">
+              {' '}
+              Mangat Toor - Developer
+            </Typography>
+          </CardContent>
         </Card>
       </Grid>
     </Grid>
