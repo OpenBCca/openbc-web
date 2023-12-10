@@ -9,7 +9,7 @@ const linksForProjectOverview: Link[] = [
 
 const languagesForProjectOverview = ['Typescript'];
 
-export function ProjectOverview() {
+export default function ProjectOverview() {
   const styles = {
     container: {
       display: 'flex',
