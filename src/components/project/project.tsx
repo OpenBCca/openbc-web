@@ -21,9 +21,9 @@ export default function Project({
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography
-            variant="h4"
+            variant="h5"
             component="div"
-            sx={{ fontFamily: 'inherit', fontWeight: '600' }}
+            sx={{ fontFamily: 'inherit', fontWeight: '700' }}
           >
             {title}
           </Typography>
