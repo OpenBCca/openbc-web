@@ -1,4 +1,11 @@
-import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  Grid,
+  Typography,
+} from '@mui/material';
 import Project from '@/components/project/project';
 import { Link } from '@/app/dataModels/link';
 import { ProjectStatusTypes } from '@/app/dataModels/project';
@@ -10,21 +17,23 @@ const linksForProjectOverview: Link[] = [
 const languagesForProjectOverview = ['Typescript'];
 
 export function ProjectOverview() {
+  const styles = {
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      backgroundColor: '#ededed',
+    },
+    cardContainer: {
+      maxWidth: 700,
+      width: '100%',
+      marginBottom: '1rem',
+    },
+  };
   return (
-    <Grid
-      container
-      spacing={1}
-      alignItems="center"
-      justifyContent="center"
-      sx={{ backgroundColor: '#ededed' }}
-      direction="column"
-    >
-      <Grid item>
-        <Card
-          sx={{
-            maxWidth: 700,
-          }}
-        >
+    <Box sx={styles.container}>
+      <Box sx={styles.cardContainer}>
+        <Card>
           <Project
             title={'Project Overview'}
             description={
@@ -36,34 +45,40 @@ export function ProjectOverview() {
             location={'Remote'}
           />
         </Card>
-      </Grid>
-      <Grid item>
-        <Card
-          sx={{
-            maxWidth: 700,
-          }}
-        >
+      </Box>
+      <Box sx={styles.cardContainer}>
+        <Card sx={{ maxWidth: '100%' }}>
           <CardContent>
-            <Typography variant="h4">Current Project Team</Typography>
-            <Typography paragraph={true} variant="body2">
-              {' '}
-              Sam Huo - President
+            <Typography
+              variant="h4"
+              component="div"
+              sx={{ fontFamily: 'inherit', fontWeight: '600' }}
+            >
+              Current Project Team
             </Typography>
-            <Typography paragraph={true} variant="body2">
+            <Typography variant="body2">
               {' '}
-              Toki  - Vice President
+              <strong>Alex Johnson</strong> - Developer
             </Typography>
-            <Typography paragraph={true} variant="body2">
+            <Typography variant="body2">
               {' '}
-              Mangat Toor - Developer
+              <strong>Emily Smith</strong> - UI/UX Design Team
             </Typography>
-            <Typography paragraph={true} variant="body2">
+            <Typography variant="body2">
               {' '}
-              Mangat Toor - Developer
+              <strong>Daniel Brown</strong> - UI/UX Research Team
+            </Typography>
+            <Typography variant="body2">
+              {' '}
+              <strong>Olivia Davis</strong> - Data Scientist
+            </Typography>
+            <Typography variant="body2">
+              {' '}
+              <strong>Max Anderson</strong> - Project Manager
             </Typography>
           </CardContent>
         </Card>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 }
