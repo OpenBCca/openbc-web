@@ -50,9 +50,9 @@ export function ProjectOverview() {
         <Card sx={{ maxWidth: '100%' }}>
           <CardContent>
             <Typography
-              variant="h4"
+              variant="h5"
               component="div"
-              sx={{ fontFamily: 'inherit', fontWeight: '600' }}
+              sx={{ fontFamily: 'inherit', fontWeight: '700' }}
             >
               Current Project Team
             </Typography>
