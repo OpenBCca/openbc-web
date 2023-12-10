@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, TextField, MenuItem } from '@mui/material';
+import React from 'react';
 
 function JoinUsForm() {
   // Function to prevent form submission on Enter key press
@@ -47,6 +48,17 @@ function JoinUsForm() {
           autoComplete="none"
           required
         />
+        <TextField
+          label="Preferred Role"
+          select
+          sx={{ width: '150%', minWidth: 200, mb: 2 }}
+          autoComplete="none"
+          required
+        >
+          <MenuItem value="FE">Frontend</MenuItem>
+          <MenuItem value="BE">Backend</MenuItem>
+          <MenuItem value="FS">Full Stack</MenuItem>
+        </TextField>
         <TextField
           label="Message"
           // minimum width for the multiline input
