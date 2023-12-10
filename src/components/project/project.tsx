@@ -30,22 +30,22 @@ export default function Project({
           <Typography variant="body2" sx={{ fontFamily: 'inherit' }}>
             {description}
           </Typography>
-          {status && (
-            <Typography
-              variant="body2"
-              component="p"
-              mt={0.5}
-            >{`Status: ${status}`}</Typography>
-          )}
-          {location && (
-            <Typography
-              variant="body2"
-              component="p"
-              mt={0.5}
-            >{`Location: ${location}`}</Typography>
-          )}
           <Typography variant="body2" mt={0.5}>
-            Links:&nbsp;
+            {status && (
+              <span>
+                <strong>Status:</strong> {status}
+              </span>
+            )}
+          </Typography>
+          <Typography variant="body2" mt={0.5}>
+            {location && (
+              <span>
+                <strong>Location:</strong> {location}
+              </span>
+            )}
+          </Typography>
+          <Typography variant="body2" mt={0.5}>
+            <strong>Links:</strong>&nbsp;
             {links.map((link: LinkInterface, idx: number) => (
               <Link href={link.url} key={`project-link-${idx}`}>
                 {link.title}
@@ -55,20 +55,22 @@ export default function Project({
           {partner && (
             <Typography variant="body2" mt={0.5}>
               {' '}
-              Partner: {partner}
+              <span>
+                <strong>Partner:</strong> {partner}
+              </span>
             </Typography>
           )}
           <Typography variant="body2" mt={0.5}>
-            Languages: {languages.join(', ')}
+            <strong>Languages:</strong> {languages.join(', ')}
           </Typography>
           {technologies && (
-            <Typography mt={0.5}>
-              Technologies: {technologies.join(', ')}
+            <Typography variant="body2" mt={0.5}>
+              <strong>Technologies:</strong> {technologies.join(', ')}
             </Typography>
           )}
           {programAreas && (
             <Typography variant="body2" mt={0.5}>
-              Program Areas: {programAreas}
+              <strong>Program Areas:</strong> {programAreas}
             </Typography>
           )}
         </CardContent>
