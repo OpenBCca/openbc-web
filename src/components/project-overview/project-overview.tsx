@@ -1,11 +1,4 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardHeader,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Box, Card, CardContent, Typography } from '@mui/material';
 import Project from '@/components/project/project';
 import { Link } from '@/app/dataModels/link';
 import { ProjectStatusTypes } from '@/app/dataModels/project';
