@@ -57,7 +57,7 @@ describe('mapProjects', () => {
         { name: 'johndoe', avatarUrl: 'https://example.com/avatar.png' },
       ],
     };
-    
+
     const projects = mapProjects(
       repositories,
       repositoriesLanguages,
