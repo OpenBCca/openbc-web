@@ -57,11 +57,7 @@ describe('mapProjects', () => {
         { name: 'johndoe', avatarUrl: 'https://example.com/avatar.png' },
       ],
     };
-    // const repositoriesLanguagesArray = Object.values(repositoriesLanguages);
-    // const repositoriesContributorsArray = Object.values(
-    //   repositoriesContributors
-    // ).flat();
-
+    
     const projects = mapProjects(
       repositories,
       repositoriesLanguages,
