@@ -1,54 +1,53 @@
 import Image from 'next/image';
 import React from 'react';
+import { Typography } from '@mui/material';
+import Container from '@mui/material/Container';
 
 export default function About() {
   return (
-    <>
-      <div className="centered-elements">
-        <h1>About</h1>
-        <p className="description">Placeholder</p>
-        <br></br>
-        <h2>Our Founder</h2>
-        <Image
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-          alt="John Doe"
-          width={500}
-          height={500}
-          className="profile"
-        />
-        <p className="description">Placeholder</p>
-        <br></br>
-        <h2>Person 1</h2>
-        <Image
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-          alt="John Doe"
-          width={500}
-          height={500}
-          className="profile"
-        />
-        <p className="description">Placeholder</p>
-        <br></br>
-        <h2>Person 2</h2>
-        <Image
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-          alt="John Doe"
-          width={500}
-          height={500}
-          className="profile"
-        />
-        <p className="description">Placeholder</p>
-        <br></br>
-        <h2>Person 3</h2>
-        <Image
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-          alt="John Doe"
-          width={500}
-          height={500}
-          className="profile"
-        />
-        <p className="description">Placeholder</p>
-        <br></br>
-      </div>
-    </>
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+      }}
+    >
+      <Typography
+        variant="h3"
+        sx={{
+          fontFamily: 'inherit',
+          fontWeight: '700',
+        }}
+      >
+        About
+      </Typography>
+      <Typography variant="body2" paragraph>
+        OpenBC, a community-driven initiative dedicated to harnessing the power
+        of technology, collaboration, and innovation to create positive impacts
+        across British Columbia, Canada. Our mission is to bring together
+        individuals passionate about technology, civic engagement, and community
+        development to address the unique challenges and opportunities faced by
+        our province.
+      </Typography>
+      <Typography variant="body2" paragraph>
+        <strong>
+          Utilize Your Skills for the Betterment of British Columbia with OpenBC
+        </strong>
+      </Typography>
+      <Typography variant="body2" paragraph>
+        Unlock the power of your skills and expertise to drive positive change
+        in British Columbia through OpenBC. At OpenBC, we're passionate about
+        leveraging your unique abilities for the advancement of our province.
+        Whether you're a tech enthusiast, a creative visionary, or a community
+        leader, your skills can play a crucial role in addressing challenges and
+        creating opportunities.
+      </Typography>
+      <Typography variant="body2">
+        <strong>
+          Contribute to Open Source Projects for BC, from Anywhere, with OpenBC
+        </strong>
+      </Typography>
+    </Container>
   );
 }
