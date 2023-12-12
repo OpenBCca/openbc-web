@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import { Typography } from '@mui/material';
 import Container from '@mui/material/Container';
@@ -38,11 +37,11 @@ export default function About() {
       </Typography>
       <Typography variant="body2" paragraph>
         Unlock the power of your skills and expertise to drive positive change
-        in British Columbia through OpenBC. At OpenBC, we're passionate about
-        leveraging your unique abilities for the advancement of our province.
-        Whether you're a tech enthusiast, a creative visionary, or a community
-        leader, your skills can play a crucial role in addressing challenges and
-        creating opportunities.
+        in British Columbia through OpenBC. At OpenBC, we&apos;re passionate
+        about leveraging your unique abilities for the advancement of our
+        province. Whether you&apos;re a tech enthusiast, a creative visionary,
+        or a community leader, your skills can play a crucial role in addressing
+        challenges and creating opportunities.
       </Typography>
       <Typography variant="body2">
         <strong>

@@ -30,8 +30,8 @@ export default function JoinUs() {
           >
             OpenBC Discord
           </Link>{' '}
-          and become a part of our active and welcoming community. Here's how
-          you can engage:
+          and become a part of our active and welcoming community. Here&apos;s
+          how you can engage:
         </Typography>
         <List>
           <ListItem>
@@ -46,8 +46,8 @@ export default function JoinUs() {
           </ListItem>
           <ListItem>
             <Typography variant="body2">
-              Let us know what projects you're interested in discussing in our
-              #showcase channel!
+              Let us know what projects you&apos;re interested in discussing in
+              our #showcase channel!
             </Typography>
           </ListItem>
         </List>
