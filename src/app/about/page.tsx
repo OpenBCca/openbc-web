@@ -10,7 +10,8 @@ export default function About() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+        height: '100%',
+        marginTop: '2%',
       }}
     >
       <Typography
