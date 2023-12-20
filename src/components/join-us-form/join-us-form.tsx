@@ -60,7 +60,7 @@ function JoinUsForm() {
           <MenuItem value="FS">Full Stack</MenuItem>
         </TextField>
         <TextField
-          label="Message"
+          label="Introduction"
           // minimum width for the multiline input
           sx={{ width: '150%', minWidth: 200, mb: 2 }}
           multiline
