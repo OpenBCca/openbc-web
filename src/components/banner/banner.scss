@@ -1,0 +1,17 @@
+@import '../../app/globals.scss';
+
+body {
+  .banner {
+    text-align: center;
+    background-color: $tertiary-color;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5rem 0;
+  }
+  .banner-title {
+    font-family: inherit;
+    font-weight: 700;
+  }
+}

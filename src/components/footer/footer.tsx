@@ -3,19 +3,15 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import './footer.scss';
 
 function Footer() {
   return (
-    <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-      <Typography variant="h6" align="center" gutterBottom>
+    <Box className="footer-container" component="footer">
+      <Typography variant="h6" className="footer-title" gutterBottom>
         OpenBC
       </Typography>
-      <Typography
-        variant="subtitle1"
-        align="center"
-        color="text.secondary"
-        component="p"
-      >
+      <Typography variant="subtitle1" className="footer-subtitle" component="p">
         Sample Text
       </Typography>
     </Box>

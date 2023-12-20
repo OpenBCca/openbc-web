@@ -3,7 +3,7 @@
 import { Box, Card, CardContent, Link, Typography } from '@mui/material';
 import React from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
-import { Project as ProjectInterface } from '../../app/dataModels/project';
+import { Project as ProjectObject } from '../../app/dataModels/project';
 
 export default function Project({
   title,
@@ -13,63 +13,29 @@ export default function Project({
   languages,
   technologies,
   programAreas,
-  location,
-  status,
-}: ProjectInterface) {
+}: ProjectObject) {
   return (
-    <Box sx={{ fontFamily: 'inherit' }}>
-      <Card sx={{ minWidth: 275 }}>
+    <Box>
+      <Card className="project-card">
         <CardContent>
-          <Typography
-            variant="h4"
-            component="div"
-            sx={{ fontFamily: 'inherit', fontWeight: '600' }}
-          >
+          <Typography variant="h4" component="div">
             {title}
           </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'inherit' }}>
-            {description}
-          </Typography>
-          {status && (
-            <Typography
-              variant="body2"
-              component="p"
-              mt={0.5}
-            >{`Status: ${status}`}</Typography>
-          )}
-          {location && (
-            <Typography
-              variant="body2"
-              component="p"
-              mt={0.5}
-            >{`Location: ${location}`}</Typography>
-          )}
-          <Typography variant="body2" mt={0.5}>
-            Links:&nbsp;
+          <Typography variant="body2">{description}</Typography>
+          <Typography variant="h6">
             {links.map((link: LinkInterface, idx: number) => (
               <Link href={link.url} key={`project-link-${idx}`}>
                 {link.title}
               </Link>
             ))}
           </Typography>
-          {partner && (
-            <Typography variant="body2" mt={0.5}>
-              {' '}
-              Partner: {partner}
-            </Typography>
-          )}
-          <Typography variant="body2" mt={0.5}>
-            Languages: {languages.join(', ')}
-          </Typography>
+          <Typography>Partner: {partner}</Typography>
+          <Typography>Languages: {languages.join(', ')}</Typography>
           {technologies && (
-            <Typography mt={0.5}>
-              Technologies: {technologies.join(', ')}
-            </Typography>
+            <Typography>Technologies: {technologies.join(', ')}</Typography>
           )}
           {programAreas && (
-            <Typography variant="body2" mt={0.5}>
-              Program Areas: {programAreas}
-            </Typography>
+            <Typography>Program Areas: {programAreas}</Typography>
           )}
         </CardContent>
       </Card>
