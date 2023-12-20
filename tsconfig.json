@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -22,11 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "/*",
-    "**/*",
-    "dist/types/**/*.ts",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["/*", "**/*", "dist/types/**/*.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

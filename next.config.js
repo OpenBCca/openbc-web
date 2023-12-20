@@ -8,6 +8,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  typescript: {
+    tsconfigPath: './tsconfig.json',
+  },
 };
 
 module.exports = nextConfig;
