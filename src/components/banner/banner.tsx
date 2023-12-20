@@ -1,23 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
+import './banner.scss';
 
 function Banner() {
   return (
-    <Box
-      sx={{
-        textAlign: 'center',
-        backgroundColor: '#ededed',
-        height: '7rem',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        padding: '5rem 0',
-      }}
-    >
-      <Typography
-        variant="h4"
-        sx={{ fontFamily: 'inherit', fontWeight: '700' }}
-      >
+    <Box className="banner">
+      <Typography variant="h4" className="banner-title">
         {'Be a Force For Good in BC!'}
       </Typography>
       <Typography variant="body1">
