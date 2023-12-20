@@ -14,4 +14,5 @@
   "editor.wordWrap": "on",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.eol": "\n",
+  "cSpell.words": ["Parens"]
 }
