@@ -1,4 +1,4 @@
-@import '../../app/globals.scss';
+@use '../../app/globals';
 
 body {
   .footer-container {
@@ -9,6 +9,6 @@ body {
   }
   .footer-subtitle {
     text-align: center;
-    color: $gray-color;
+    color: globals.$gray-color;
   }
 }

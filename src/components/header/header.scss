@@ -1,4 +1,4 @@
-@import '../../app/globals.scss';
+@use '../../app/globals';
 
 body {
   .header-outer-box {
@@ -7,7 +7,7 @@ body {
     justify-content: center;
     border-bottom: 2px solid;
     padding: 1.2rem 0;
-    border-color: $tertiary-color;
+    border-color: globals.$tertiary-color;
   }
 
   .header-inner-box {
@@ -40,8 +40,8 @@ body {
 
     &:hover {
       transform: translateY(0.4rem);
-      background-color: $hover-color;
-      color: $secondary-color;
+      background-color: globals.$hover-color;
+      color: globals.$secondary-color;
     }
 
     &:active {
@@ -49,7 +49,7 @@ body {
     }
 
     .Mui-selected {
-      color: $primary-color;
+      color: globals.$primary-color;
     }
   }
 }

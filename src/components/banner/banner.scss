@@ -1,9 +1,9 @@
-@import '../../app/globals.scss';
+@use '../../app/globals';
 
 body {
   .banner {
     text-align: center;
-    background-color: $tertiary-color;
+    background-color: globals.$tertiary-color;
     height: 7rem;
     display: flex;
     flex-direction: column;
