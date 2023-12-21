@@ -12,7 +12,7 @@ function Header() {
             OpenBC
           </Link>
         </Box>
-        <Tabs>
+        <Tabs value={false}>
           <Tab
             label="Projects"
             value="/projects"
