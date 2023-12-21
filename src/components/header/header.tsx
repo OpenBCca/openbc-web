@@ -19,10 +19,6 @@ function Header() {
             href="/projects"
             role="button"
             className="header-tab"
-            sx={{
-              ...headerStyle.link,
-              color: 'inherit',
-            }}
             component={Link}
           />
           <Tab
@@ -31,10 +27,6 @@ function Header() {
             href="/join-us"
             role="button"
             className="header-tab"
-            sx={{
-              ...headerStyle.link,
-              color: 'inherit',
-            }}
             component={Link}
           />
           <Tab
@@ -43,10 +35,6 @@ function Header() {
             href="/about"
             role="button"
             className="header-tab"
-            sx={{
-              ...headerStyle.link,
-              color: 'inherit',
-            }}
             component={Link}
           />
         </Tabs>
