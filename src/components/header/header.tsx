@@ -46,7 +46,7 @@ function Header() {
             role="button"
             sx={{
               ...headerStyle.link,
-              color: location.pathname === '/projects' ? '#2563eb' : 'inherit',
+              color: 'inherit',
             }}
             component={Link}
           />
@@ -57,7 +57,7 @@ function Header() {
             role="button"
             sx={{
               ...headerStyle.link,
-              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit',
+              color: 'inherit',
             }}
             component={Link}
           />
@@ -68,7 +68,7 @@ function Header() {
             role="button"
             sx={{
               ...headerStyle.link,
-              color: location.pathname === '/about' ? '#2563eb' : 'inherit',
+              color: 'inherit',
             }}
             component={Link}
           />
