@@ -17,18 +17,21 @@ body {
     row-gap: 0.4rem;
     align-items: center;
   }
+
   .header-title {
     font-size: 28px;
     font-weight: 800;
     color: inherit;
     text-decoration: none;
   }
+
   .header-nav {
     display: flex;
     align-items: center;
     column-gap: 0.4rem;
     font-weight: 600;
   }
+
   .header-tab {
     font-size: 14px;
     font-weight: 600;
