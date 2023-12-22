@@ -1,19 +1,13 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import Container from '@mui/material/Container';
+import './about.scss';
 
 export default function About() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        marginTop: '2%',
-      }}
-    >
+    <Container maxWidth="lg" className="container">
       <Typography
+        className="about-header"
         variant="h3"
         sx={{
           fontFamily: 'inherit',
