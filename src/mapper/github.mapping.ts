@@ -17,7 +17,7 @@ export function mapProject(
 }
 
 export function mapProjects(
-  repositories: any,
+  repositories: any[],
   repositoriesLanguages: any,
   repositoriesContributors: any
 ) {
