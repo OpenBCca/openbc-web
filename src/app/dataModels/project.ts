@@ -8,13 +8,4 @@ export interface Project {
   languages: string[];
   technologies?: string[];
   programAreas?: string;
-  location?: string;
-  status?: ProjectStatusTypes;
-}
-
-export enum ProjectStatusTypes {
-  active = 'Active',
-  completed = 'Completed',
-  onHold = 'On Hold',
-  inActive = 'Inactive',
 }
