@@ -31,7 +31,7 @@ body {
     column-gap: 0.4rem;
     font-weight: 600;
   }
-  
+
   .header-tab {
     font-size: 14px;
     font-weight: 600;
@@ -39,7 +39,6 @@ body {
     border-radius: 6px;
     padding: 0.4rem 0.8rem;
     transition: all 240ms cubic-bezier(0.4, 0.4, 0.4, 0.4);
-    color: inherit;
 
     &:hover {
       transform: translateY(0.4rem);
