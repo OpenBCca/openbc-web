@@ -3,6 +3,7 @@
 import { Box, Link, Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import './header.scss';
 
 function Header() {
   const pathname = usePathname();
@@ -12,25 +13,8 @@ function Header() {
     { label: 'About', value: '/about', href: '/about' },
   ];
   return (
-    <Box
-      component={'header'}
-      sx={{
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        borderBottom: 2,
-        paddingY: '1.2rem',
-        borderColor: '#e7e5e4',
-      }}
-    >
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          rowGap: '0.4rem',
-          alignItems: 'center',
-        }}
-      >
+    <Box component={'header'} className="header-outer-box">
+      <Box className="header-inner-box">
         <Box>
           <Link
             href="/"
@@ -56,29 +40,15 @@ function Header() {
               value={tab.value}
               href={tab.href}
               role="button"
+              className="header-tab"
               sx={{
-                fontSize: 16,
-                fontWeight: '600',
                 color: pathname === tab.href ? 'blue' : 'inherit',
-                textDecoration: 'none',
-                transition: 'opacity 0.25s ease-in-out',
-                '&:hover': {
-                  opacity: 0.25,
-                },
               }}
               component={Link}
             />
           ))}
         </Tabs>
-        <Box
-          component={'nav'}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            columnGap: '0.4rem',
-            fontWeight: '600',
-          }}
-        ></Box>
+        <Box component={'nav'} className="header-nav"></Box>
       </Box>
     </Box>
   );

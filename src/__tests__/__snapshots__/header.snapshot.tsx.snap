@@ -3,16 +3,16 @@
 exports[`Header snapshot test should render header unchanged 1`] = `
 <div>
   <header
-    class="MuiBox-root css-sdwowb"
+    class="header-outer-box MuiBox-root css-0"
   >
     <div
-      class="MuiBox-root css-1s56th"
+      class="header-inner-box MuiBox-root css-0"
     >
       <div
         class="MuiBox-root css-0"
       >
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cbl8lq-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways header-title css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="/"
         >
           OpenBC
@@ -31,10 +31,10 @@ exports[`Header snapshot test should render header unchanged 1`] = `
           >
             <a
               aria-selected="false"
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-fbmie2-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary header-tab css-16hexql-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
               href="/projects"
               role="button"
-              tabindex="-1"
+              tabindex="0"
             >
               Projects
               <span
@@ -43,7 +43,7 @@ exports[`Header snapshot test should render header unchanged 1`] = `
             </a>
             <a
               aria-selected="false"
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-fbmie2-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary header-tab css-16hexql-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
               href="/join-us"
               role="button"
               tabindex="-1"
@@ -55,7 +55,7 @@ exports[`Header snapshot test should render header unchanged 1`] = `
             </a>
             <a
               aria-selected="false"
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-fbmie2-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary header-tab css-16hexql-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
               href="/about"
               role="button"
               tabindex="-1"
@@ -73,7 +73,7 @@ exports[`Header snapshot test should render header unchanged 1`] = `
         </div>
       </div>
       <nav
-        class="MuiBox-root css-g4rlas"
+        class="header-nav MuiBox-root css-0"
       />
     </div>
   </header>

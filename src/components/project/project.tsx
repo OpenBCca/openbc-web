@@ -16,7 +16,7 @@ export default function Project({
 }: ProjectObject) {
   return (
     <Box>
-      <Card sx={{ minWidth: 275 }}>
+      <Card className="project-card">
         <CardContent>
           <Typography variant="h4" component="div">
             {title}
