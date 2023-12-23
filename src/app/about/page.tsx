@@ -6,14 +6,7 @@ import './about.scss';
 export default function About() {
   return (
     <Container maxWidth="lg" className="container">
-      <Typography
-        className="about-header"
-        variant="h3"
-        sx={{
-          fontFamily: 'inherit',
-          fontWeight: '700',
-        }}
-      >
+      <Typography className="about-header" variant="h3">
         About
       </Typography>
       <Typography variant="body2" paragraph>
