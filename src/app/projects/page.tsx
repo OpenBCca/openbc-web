@@ -1,5 +1,7 @@
 'use client';
 
+import Footer from '@/components/footer/footer';
+import Header from '@/components/header/header';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -19,6 +21,7 @@ export default function Album() {
     <ThemeProvider theme={createTheme()}>
       <CssBaseline />
       <main>
+        <Header />
         <h1 className="centered-elements">Projects</h1>
         {/* hero unit */}
         <Container sx={{ py: 8 }} maxWidth="md">
@@ -56,6 +59,7 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
+        <Footer />
       </main>
     </ThemeProvider>
   );

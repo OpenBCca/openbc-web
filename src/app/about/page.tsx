@@ -1,9 +1,12 @@
+import Footer from '@/components/footer/footer';
+import Header from '@/components/header/header';
 import Image from 'next/image';
 import React from 'react';
 
 export default function About() {
   return (
     <>
+      <Header />
       <div className="centered-elements">
         <h1>About</h1>
         <p className="description">Placeholder</p>
@@ -49,6 +52,7 @@ export default function About() {
         <p className="description">Placeholder</p>
         <br></br>
       </div>
+      <Footer />
     </>
   );
 }
