@@ -1,10 +1,16 @@
 'use client';
 
-import { headerStyle } from '@/styles/header-style';
-import { Tabs, Tab, Box, Link } from '@mui/material';
+import { Box, Link, Tab, Tabs } from '@mui/material';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 function Header() {
+  const pathname = usePathname();
+  const tabsData = [
+    { label: 'Projects', value: '/projects', href: '/projects' },
+    { label: 'Join Us', value: '/join-us', href: '/join-us' },
+    { label: 'About', value: '/about', href: '/about' },
+  ];
   return (
     <Box
       component={'header'}
@@ -33,45 +39,36 @@ function Header() {
               fontWeight: '800',
               color: 'inherit',
               textDecoration: 'none',
+              transition: 'opacity 0.25s ease-in-out',
+              '&:hover': {
+                opacity: 0.25,
+              },
             }}
           >
             OpenBC
           </Link>
         </Box>
         <Tabs>
-          <Tab
-            label="Projects"
-            value="/projects"
-            href="/projects"
-            role="button"
-            sx={{
-              ...headerStyle.link,
-              color: 'inherit',
-            }}
-            component={Link}
-          />
-          <Tab
-            label="Join Us"
-            value="/join-us"
-            href="/join-us"
-            role="button"
-            sx={{
-              ...headerStyle.link,
-              color: 'inherit',
-            }}
-            component={Link}
-          />
-          <Tab
-            label="About"
-            value="/about"
-            href="/about"
-            role="button"
-            sx={{
-              ...headerStyle.link,
-              color: 'inherit',
-            }}
-            component={Link}
-          />
+          {tabsData.map((tab: any, index: number) => (
+            <Tab
+              key={index}
+              label={tab.label}
+              value={tab.value}
+              href={tab.href}
+              role="button"
+              sx={{
+                fontSize: 16,
+                fontWeight: '600',
+                color: pathname === tab.href ? 'blue' : 'inherit',
+                textDecoration: 'none',
+                transition: 'opacity 0.25s ease-in-out',
+                '&:hover': {
+                  opacity: 0.25,
+                },
+              }}
+              component={Link}
+            />
+          ))}
         </Tabs>
         <Box
           component={'nav'}
