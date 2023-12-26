@@ -12,7 +12,7 @@ exports[`Header snapshot test should render header unchanged 1`] = `
         class="MuiBox-root css-0"
       >
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways header-title css-1xylxj1-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cbl8lq-MuiTypography-root-MuiLink-root"
           href="/"
         >
           OpenBC
@@ -34,7 +34,7 @@ exports[`Header snapshot test should render header unchanged 1`] = `
               class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary header-tab css-16hexql-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
               href="/projects"
               role="button"
-              tabindex="0"
+              tabindex="-1"
             >
               Projects
               <span

@@ -12,7 +12,7 @@ enum TabValue {
 }
 
 function Header() {
-  const [currentPath, setCurrentPath] = useState<string>('/');
+  const [currentPath, setCurrentPath] = useState<string>(TabValue.projects);
   const pathname = usePathname();
   useEffect(() => {
     setCurrentPath(pathname);
