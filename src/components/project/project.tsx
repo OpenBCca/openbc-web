@@ -17,8 +17,8 @@ export default function Project({
   status,
 }: ProjectInterface) {
   return (
-    <Box sx={{ fontFamily: 'inherit' }}>
-      <Card sx={{ minWidth: 275 }}>
+    <Box>
+      <Card className="project-card">
         <CardContent>
           <Typography
             variant="h5"
