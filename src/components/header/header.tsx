@@ -1,30 +1,20 @@
 'use client';
 
-import { headerStyle } from '@/styles/header-style';
-import { Tabs, Tab, Box, Link } from '@mui/material';
+import { Box, Link, Tab, Tabs } from '@mui/material';
+import { usePathname } from 'next/navigation';
 import React from 'react';
+import './header.scss';
 
 function Header() {
+  const pathname = usePathname();
+  const tabsData = [
+    { label: 'Projects', value: '/projects', href: '/projects' },
+    { label: 'Join Us', value: '/join-us', href: '/join-us' },
+    { label: 'About', value: '/about', href: '/about' },
+  ];
   return (
-    <Box
-      component={'header'}
-      sx={{
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        borderBottom: 2,
-        paddingY: '1.2rem',
-        borderColor: '#e7e5e4',
-      }}
-    >
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          rowGap: '0.4rem',
-          alignItems: 'center',
-        }}
-      >
+    <Box component={'header'} className="header-outer-box">
+      <Box className="header-inner-box">
         <Box>
           <Link
             href="/"
@@ -33,55 +23,32 @@ function Header() {
               fontWeight: '800',
               color: 'inherit',
               textDecoration: 'none',
+              transition: 'opacity 0.25s ease-in-out',
+              '&:hover': {
+                opacity: 0.25,
+              },
             }}
           >
             OpenBC
           </Link>
         </Box>
         <Tabs>
-          <Tab
-            label="Projects"
-            value="/projects"
-            href="/projects"
-            role="button"
-            sx={{
-              ...headerStyle.link,
-              color: location.pathname === '/projects' ? '#2563eb' : 'inherit',
-            }}
-            component={Link}
-          />
-          <Tab
-            label="Join Us"
-            value="/join-us"
-            href="/join-us"
-            role="button"
-            sx={{
-              ...headerStyle.link,
-              color: location.pathname === '/join-us' ? '#2563eb' : 'inherit',
-            }}
-            component={Link}
-          />
-          <Tab
-            label="About"
-            value="/about"
-            href="/about"
-            role="button"
-            sx={{
-              ...headerStyle.link,
-              color: location.pathname === '/about' ? '#2563eb' : 'inherit',
-            }}
-            component={Link}
-          />
+          {tabsData.map((tab: any, index: number) => (
+            <Tab
+              key={index}
+              label={tab.label}
+              value={tab.value}
+              href={tab.href}
+              role="button"
+              className="header-tab"
+              sx={{
+                color: pathname === tab.href ? 'blue' : 'inherit',
+              }}
+              component={Link}
+            />
+          ))}
         </Tabs>
-        <Box
-          component={'nav'}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            columnGap: '0.4rem',
-            fontWeight: '600',
-          }}
-        ></Box>
+        <Box component={'nav'} className="header-nav"></Box>
       </Box>
     </Box>
   );

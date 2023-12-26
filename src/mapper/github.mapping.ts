@@ -18,8 +18,8 @@ export function mapProject(
 
 export function mapProjects(
   repositories: any[],
-  repositoriesLanguages: any[],
-  repositoriesContributors: any[]
+  repositoriesLanguages: any,
+  repositoriesContributors: any
 ) {
   return repositories.map((repository: any) =>
     mapProject(

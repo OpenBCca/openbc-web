@@ -1,5 +1,7 @@
 'use client';
 
+import Footer from '@/components/footer/footer';
+import Header from '@/components/header/header';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import './projects.scss';
 
 const cards = [1, 2, 3, 4, 5, 6];
 
@@ -19,29 +22,21 @@ export default function Album() {
     <ThemeProvider theme={createTheme()}>
       <CssBaseline />
       <main>
+        <Header />
         <h1 className="centered-elements">Projects</h1>
         {/* hero unit */}
-        <Container sx={{ py: 8 }} maxWidth="md">
+        <Container className="projects-container" maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
-                >
+                <Card className="card">
                   <CardMedia
                     component="div"
-                    sx={{
-                      // 16:9
-                      pt: '56.25%',
-                    }}
+                    className="card-media"
                     image="https://source.unsplash.com/random?wallpapers"
                   />
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent className="card-content">
                     <Typography gutterBottom variant="h5" component="h2">
                       Project
                     </Typography>
@@ -56,6 +51,7 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
+        <Footer />
       </main>
     </ThemeProvider>
   );
