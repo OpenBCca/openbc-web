@@ -2,16 +2,32 @@
 
 import { Box, Link, Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './header.scss';
 
+enum TabValue {
+  projects = '/projects',
+  joinUs = '/join-us',
+  about = '/about',
+}
+
 function Header() {
+  const [currentPath, setCurrentPath] = useState<string>('/');
   const pathname = usePathname();
+  useEffect(() => {
+    setCurrentPath(pathname);
+  }, [pathname]);
+
   const tabsData = [
-    { label: 'Projects', value: '/projects', href: '/projects' },
-    { label: 'Join Us', value: '/join-us', href: '/join-us' },
-    { label: 'About', value: '/about', href: '/about' },
+    { label: 'Projects', value: TabValue.projects, href: '/projects' },
+    { label: 'Join Us', value: TabValue.joinUs, href: '/join-us' },
+    { label: 'About', value: TabValue.about, href: '/about' },
   ];
+
+  const handleChange = (event: React.ChangeEvent<any>, newValue: TabValue) => {
+    setCurrentPath(newValue);
+  };
+
   return (
     <Box component={'header'} className="header-outer-box">
       <Box className="header-inner-box">
@@ -32,8 +48,8 @@ function Header() {
             OpenBC
           </Link>
         </Box>
-        <Tabs>
-          {tabsData.map((tab: any, index: number) => (
+        <Tabs value={currentPath} onChange={handleChange}>
+          {tabsData.map((tab, index) => (
             <Tab
               key={index}
               label={tab.label}
@@ -41,9 +57,6 @@ function Header() {
               href={tab.href}
               role="button"
               className="header-tab"
-              sx={{
-                color: pathname === tab.href ? 'blue' : 'inherit',
-              }}
               component={Link}
             />
           ))}
