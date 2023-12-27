@@ -9,12 +9,13 @@ export default function Project({
   title,
   description,
   links,
-  partner,
+  partners,
   languages,
   technologies,
   programAreas,
   location,
   status,
+  contributors,
 }: ProjectInterface) {
   return (
     <Box>
@@ -52,11 +53,11 @@ export default function Project({
               </Link>
             ))}
           </Typography>
-          {partner && (
+          {partners && (
             <Typography variant="body2" mt={0.5}>
               {' '}
               <span>
-                <strong>Partner:</strong> {partner}
+                <strong>Partners:</strong> {partners}
               </span>
             </Typography>
           )}
@@ -71,6 +72,11 @@ export default function Project({
           {programAreas && (
             <Typography variant="body2" mt={0.5}>
               <strong>Program Areas:</strong> {programAreas}
+            </Typography>
+          )}
+          {contributors && (
+            <Typography variant="body2" mt={0.5}>
+              <strong>Contributors:</strong> {contributors.join(', ')}
             </Typography>
           )}
         </CardContent>

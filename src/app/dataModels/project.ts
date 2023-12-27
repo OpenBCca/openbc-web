@@ -4,12 +4,13 @@ export interface Project {
   title: string;
   description: string;
   links: Link[];
-  partner?: string;
+  partners?: string;
   languages: string[];
   technologies?: string[];
   programAreas?: string;
   location?: string;
   status?: ProjectStatusTypes;
+  contributors: string[];
 }
 
 export enum ProjectStatusTypes {
