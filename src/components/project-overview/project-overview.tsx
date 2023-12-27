@@ -1,77 +1,31 @@
-import { Box, Card, CardContent, Typography } from '@mui/material';
 import Project from '@/components/project/project';
-import { Link } from '@/app/dataModels/link';
-import { ProjectStatusTypes } from '@/app/dataModels/project';
+import { Project as ProjectInterface } from '../../app/dataModels/project';
+import { getLocalProjectData } from '@/utils/getLocalProjectData';
+import { Box, Card } from '@mui/material';
+import './project-overview.scss';
 
-const linksForProjectOverview: Link[] = [
-  { title: 'GitHub', url: 'https://github.com/OpenBCca/openbc-web' },
-];
-
-const languagesForProjectOverview = ['Typescript'];
-
-export default function ProjectOverview() {
-  const styles = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundColor: '#ededed',
-    },
-    cardContainer: {
-      maxWidth: 700,
-      width: '100%',
-      marginBottom: '1rem',
-    },
-  };
+export default async function ProjectOverview() {
+  const localProjectData = await getLocalProjectData();
   return (
-    <Box sx={styles.container}>
-      <Box sx={styles.cardContainer}>
-        <Card>
-          <Project
-            title={'Project Overview'}
-            description={
-              'OpenBC is a volunteer-driven organization that brings together technologists, designers, data analysts, and community members to work on projects that address civic and social challenges in BC using technology and innovation. They host hackathons, workshops, and events where participants collaborate to create solutions for local issues.'
-            }
-            links={linksForProjectOverview}
-            languages={languagesForProjectOverview}
-            status={ProjectStatusTypes.active}
-            location={'Remote'}
-          />
-        </Card>
-      </Box>
-      <Box sx={styles.cardContainer}>
-        <Card sx={{ maxWidth: '100%' }}>
-          <CardContent>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{ fontFamily: 'inherit', fontWeight: '700' }}
-            >
-              Current Project Team
-            </Typography>
-            <Typography variant="body2">
-              {' '}
-              <strong>Alex Johnson</strong> - Developer
-            </Typography>
-            <Typography variant="body2">
-              {' '}
-              <strong>Emily Smith</strong> - UI/UX Design Team
-            </Typography>
-            <Typography variant="body2">
-              {' '}
-              <strong>Daniel Brown</strong> - UI/UX Research Team
-            </Typography>
-            <Typography variant="body2">
-              {' '}
-              <strong>Olivia Davis</strong> - Data Scientist
-            </Typography>
-            <Typography variant="body2">
-              {' '}
-              <strong>Max Anderson</strong> - Project Manager
-            </Typography>
-          </CardContent>
-        </Card>
-      </Box>
+    <Box className="project-overview-container">
+      {localProjectData.map((project: ProjectInterface) => (
+        <>
+          <Box className="project-overview-card">
+            <Card>
+              <Project
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                links={project.links}
+                languages={project.languages}
+                status={project.status}
+                location={project.location}
+                contributors={project.contributors}
+              />
+            </Card>
+          </Box>
+        </>
+      ))}
     </Box>
   );
 }
