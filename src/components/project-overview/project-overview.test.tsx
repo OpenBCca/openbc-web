@@ -14,7 +14,7 @@ describe('Project Overview', () => {
       languages: ['Javascript', 'CSS'],
       status: 'In Progress',
       location: 'Canada',
-      contributors: [],
+      contributors: ['Alex', 'Emily'],
     },
     {
       title: 'Project 2',
@@ -23,7 +23,7 @@ describe('Project Overview', () => {
       languages: ['Python', 'Java'],
       status: 'Inactive',
       location: 'USA',
-      contributors: [],
+      contributors: ['John', 'Ted', 'Riley'],
     },
   ];
 
@@ -54,18 +54,13 @@ describe('Project Overview', () => {
       });
 
       expect(
-        screen.getByText(`Languages: ${project.languages.join(', ')}`)
+        screen.getByText(`${project.languages.join(', ')}`)
       ).toBeInTheDocument();
-      expect(screen.getByText(`Status: ${project.status}`)).toBeInTheDocument();
+      expect(screen.getByText(`${project.status}`)).toBeInTheDocument();
+      expect(screen.getByText(`${project.location}`)).toBeInTheDocument();
       expect(
-        screen.getByText(`Location: ${project.location}`)
+        screen.getByText(`${project.contributors.join(', ')}`)
       ).toBeInTheDocument();
-
-      project.contributors.forEach((contributor) => {
-        expect(
-          screen.getByText(`Contributor: ${contributor}`)
-        ).toBeInTheDocument();
-      });
     });
   });
 });
