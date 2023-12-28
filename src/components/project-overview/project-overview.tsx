@@ -1,6 +1,6 @@
 import Project from '@/components/project/project';
 import { Project as ProjectInterface } from '../../app/dataModels/project';
-import { getLocalProjectData } from '@/utils/getLocalProjectData';
+import { getLocalProjectData } from '@/utils/get-local-project-data';
 import { Box, Card } from '@mui/material';
 import './project-overview.scss';
 import { Fragment } from 'react';

@@ -1,9 +1,9 @@
 import ProjectOverview from '@/components/project-overview/project-overview';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import * as getLocalProjectDataModule from '@/utils/getLocalProjectData';
+import * as getLocalProjectDataModule from '@/utils/get-local-project-data';
 
-jest.mock('@/utils/getLocalProjectData');
+jest.mock('@/utils/get-local-project-data');
 
 describe('Project Overview', () => {
   const mockProjectData = [
