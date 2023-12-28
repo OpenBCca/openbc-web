@@ -1,7 +1,7 @@
-import { promises as fs } from 'fs';
+import { promises as fsPromises } from 'fs';
 
 export async function getLocalProjectData() {
-  const projectJson = await fs.readFile(
+  const projectJson = await fsPromises.readFile(
     process.cwd() + '/src/json/projects.json',
     'utf8'
   );
