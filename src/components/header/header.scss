@@ -8,6 +8,18 @@ body {
     border-bottom: 2px solid;
     padding: 1.2rem 0;
     border-color: globals.$tertiary-color;
+
+    .title-link {
+      font-size: 28px;
+      font-weight: 800;
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.25s ease-in-out;
+
+      &:hover {
+        opacity: 0.25;
+      }
+    }
   }
 
   .header-inner-box {

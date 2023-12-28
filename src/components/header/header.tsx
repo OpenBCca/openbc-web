@@ -3,51 +3,30 @@
 import { Box, Link, Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { HeaderEnum, pathToEnumMap, tabsData } from './header-constants';
 import './header.scss';
 
-enum TabValue {
-  projects = '/projects',
-  joinUs = '/join-us',
-  about = '/about',
-}
-
 function Header() {
-  const [currentPath, setCurrentPath] = useState<string>(TabValue.projects);
+  const [currentPath, setCurrentPath] = useState(HeaderEnum.default);
   const pathname = usePathname();
+
   useEffect(() => {
-    setCurrentPath(pathname);
+    setCurrentPath(pathToEnumMap[pathname] || HeaderEnum.default);
   }, [pathname]);
 
-  const tabsData = [
-    { label: 'Projects', value: TabValue.projects, href: '/projects' },
-    { label: 'Join Us', value: TabValue.joinUs, href: '/join-us' },
-    { label: 'About', value: TabValue.about, href: '/about' },
-  ];
-
-  const handleChange = (event: React.ChangeEvent<any>, newValue: TabValue) => {
+  const handleChange = (
+    event: React.ChangeEvent<any>,
+    newValue: HeaderEnum
+  ) => {
     setCurrentPath(newValue);
   };
 
   return (
     <Box component={'header'} className="header-outer-box">
       <Box className="header-inner-box">
-        <Box>
-          <Link
-            href="/"
-            sx={{
-              fontSize: 28,
-              fontWeight: '800',
-              color: 'inherit',
-              textDecoration: 'none',
-              transition: 'opacity 0.25s ease-in-out',
-              '&:hover': {
-                opacity: 0.25,
-              },
-            }}
-          >
-            OpenBC
-          </Link>
-        </Box>
+        <Link href="/" className="title-link">
+          OpenBC
+        </Link>
         <Tabs value={currentPath} onChange={handleChange}>
           {tabsData.map((tab, index) => (
             <Tab
