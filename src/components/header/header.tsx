@@ -3,15 +3,18 @@
 import { Box, Link, Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { HeaderEnum, pathToEnumMap, tabsData } from './header-constants';
+import HeaderEnum from './header-enum';
+import { headerData, pathToEnumMap } from './header-map';
 import './header.scss';
 
 function Header() {
-  const [currentPath, setCurrentPath] = useState(HeaderEnum.default);
   const pathname = usePathname();
+  const [currentPath, setCurrentPath] = useState(
+    pathToEnumMap[pathname] || false
+  );
 
   useEffect(() => {
-    setCurrentPath(pathToEnumMap[pathname] || HeaderEnum.default);
+    setCurrentPath(pathToEnumMap[pathname] || false);
   }, [pathname]);
 
   const handleChange = (
@@ -28,7 +31,7 @@ function Header() {
           OpenBC
         </Link>
         <Tabs value={currentPath} onChange={handleChange}>
-          {tabsData.map((tab, index) => (
+          {headerData.map((tab, index) => (
             <Tab
               key={index}
               label={tab.label}

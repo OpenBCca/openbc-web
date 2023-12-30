@@ -30,7 +30,7 @@ exports[`Header snapshot test should render header unchanged 1`] = `
               class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary header-tab css-16hexql-MuiTypography-root-MuiLink-root-MuiButtonBase-root-MuiTab-root"
               href="/projects"
               role="button"
-              tabindex="-1"
+              tabindex="0"
             >
               Projects
               <span
