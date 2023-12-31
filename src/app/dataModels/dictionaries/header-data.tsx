@@ -1,7 +1,9 @@
-import HeaderEnum from './header-enum';
+import HeaderEnum from '../enum/header-enum';
 
-export const headerData = [
+const headerData = [
   { label: 'Projects', value: HeaderEnum.projects, href: '/projects' },
   { label: 'Join Us', value: HeaderEnum.joinUs, href: '/join-us' },
   { label: 'About', value: HeaderEnum.about, href: '/about' },
 ];
+
+export default headerData;

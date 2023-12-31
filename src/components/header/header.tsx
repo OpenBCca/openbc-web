@@ -3,8 +3,8 @@
 import { Box, Link, Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import HeaderEnum from './header-enum';
-import { headerData, pathToEnumMap } from './header-map';
+import HeaderEnum from '../../app/dataModels/enum/header-enum';
+import { headerData, pathToEnumMap } from '../../utils/maps/header-map';
 import './header.scss';
 
 function Header() {

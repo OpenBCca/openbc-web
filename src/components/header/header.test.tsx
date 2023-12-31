@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import HeaderEnum from '../../app/dataModels/enum/header-enum';
+import { headerData, pathToEnumMap } from '../../utils/maps/header-map';
 import Header from './header';
-import { headerData, pathToEnumMap } from './header-map';
-import HeaderEnum from './header-enum';
 
 describe('Header', () => {
   it('should render header', () => {
