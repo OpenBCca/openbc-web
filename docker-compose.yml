@@ -1,11 +1,9 @@
-# docker-compose.yml
-
 version: '3'
-
 services:
   web:
     build:
       context: .
+      target: dev
       dockerfile: Dockerfile
     container_name: local-site
     restart: always
