@@ -1,11 +1,14 @@
 'use client';
 
+import headerData from '@/components/header/header-data';
 import { Box, Link, Tab, Tabs } from '@mui/material';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import HeaderEnum from '../../app/dataModels/enum/header-enum';
-import { headerData, pathToEnumMap } from '../../utils/maps/header-map';
+import HeaderEnum from '../../enum/header-enum';
+import generateHeaderData from '../../utils/header-map/header-map';
 import './header.scss';
+
+const pathToEnumMap = generateHeaderData();
 
 function Header() {
   const pathname = usePathname();

@@ -1,4 +1,4 @@
-import HeaderEnum from '../enum/header-enum';
+import HeaderEnum from '../../enum/header-enum';
 
 const headerData = [
   { label: 'Projects', value: HeaderEnum.projects, href: '/projects' },

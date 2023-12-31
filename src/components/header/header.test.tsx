@@ -1,8 +1,9 @@
+import headerData from '@/components/header/header-data';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import HeaderEnum from '../../app/dataModels/enum/header-enum';
-import { headerData, pathToEnumMap } from '../../utils/maps/header-map';
+import HeaderEnum from '../../enum/header-enum';
+import generateHeaderData from '../../utils/header-map/header-map';
 import Header from './header';
 
 describe('Header', () => {
@@ -35,7 +36,7 @@ describe('Header', () => {
     const hrefSet = new Set<string>();
     let hasDuplicate = false;
 
-    headerData.forEach((tab) => {
+    headerData.forEach((tab: any) => {
       if (hrefSet.has(tab.href)) {
         hasDuplicate = true;
       }
@@ -56,10 +57,10 @@ describe('Header', () => {
   });
 
   it('should match headerData to HeaderEnum', () => {
-    expect(Object.keys(pathToEnumMap).length).toEqual(headerData.length);
+    expect(Object.keys(generateHeaderData()).length).toEqual(headerData.length);
 
     headerData.forEach((tab) => {
-      expect(pathToEnumMap[tab.href]).toEqual(tab.value);
+      expect(generateHeaderData()[tab.href]).toEqual(tab.value);
     });
   });
 });
