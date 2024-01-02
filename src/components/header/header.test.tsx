@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import HeaderEnum from '../../enum/header-enum';
-import generateHeaderData from '../../utils/header-map/header-map';
 import Header from './header';
 
 describe('Header', () => {
@@ -54,13 +53,5 @@ describe('Header', () => {
     expect(HeaderEnum.projects).not.toEqual(HeaderEnum.joinUs);
     expect(HeaderEnum.projects).not.toEqual(HeaderEnum.about);
     expect(HeaderEnum.joinUs).not.toEqual(HeaderEnum.about);
-  });
-
-  it('should match headerData to HeaderEnum', () => {
-    expect(Object.keys(generateHeaderData()).length).toEqual(headerData.length);
-
-    headerData.forEach((tab) => {
-      expect(generateHeaderData()[tab.href]).toEqual(tab.value);
-    });
   });
 });

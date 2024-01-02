@@ -8,9 +8,8 @@ import HeaderEnum from '../../enum/header-enum';
 import generateHeaderData from '../../utils/header-map/header-map';
 import './header.scss';
 
-const pathToEnumMap = generateHeaderData();
-
 function Header() {
+  const pathToEnumMap = generateHeaderData();
   const pathname = usePathname();
   const [currentPath, setCurrentPath] = useState(
     pathToEnumMap[pathname] || false
@@ -18,7 +17,7 @@ function Header() {
 
   useEffect(() => {
     setCurrentPath(pathToEnumMap[pathname] || false);
-  }, [pathname]);
+  }, [pathToEnumMap, pathname]);
 
   const handleChange = (
     event: React.ChangeEvent<any>,
