@@ -6,11 +6,22 @@
       { "title": "GitHub", "url": "https://github.com/OpenBCca/openbc-web" }
     ],
     "partners": "",
-    "languages": ["Typescript"],
+    "languages": ["TypeScript", "JavaScript", "SCSS"],
     "technologies": [],
     "programAreas": "",
     "location": "Remote",
     "status": "Active",
-    "contributors": ["Alex Johnson", "Emily Smith", "Daniel Brown"]
+    "contributors": [
+      "Nam Mai",
+      "Tan Pham",
+      "Sam Huo",
+      "Derek D'Souza",
+      "Correy Lim",
+      "Pooria Taghdiri",
+      "Yang Su",
+      "Mangat Toor",
+      "Alja Cekada",
+      "Ahmad Akhtar"
+    ]
   }
 ]
