@@ -1,0 +1,15 @@
+body {
+  .project-overview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: '#ededed';
+    margin-top: 1rem;
+  }
+
+  .project-overview-card {
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
