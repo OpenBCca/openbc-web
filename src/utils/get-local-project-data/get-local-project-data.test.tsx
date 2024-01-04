@@ -1,4 +1,4 @@
-import { getLocalProjectData } from '@/utils/get-local-project-data';
+import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
 
 const mockProjectJson = JSON.stringify([
   {

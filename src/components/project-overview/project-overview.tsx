@@ -1,9 +1,9 @@
 import Project from '@/components/project/project';
-import { Project as ProjectInterface } from '../../app/dataModels/project';
-import { getLocalProjectData } from '@/utils/get-local-project-data';
+import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
 import { Box, Card } from '@mui/material';
-import './project-overview.scss';
 import { Fragment } from 'react';
+import { Project as ProjectInterface } from '../../app/dataModels/project';
+import './project-overview.scss';
 
 export default async function ProjectOverview() {
   const localProjectData = await getLocalProjectData();
