@@ -14,11 +14,19 @@ const config = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   collectCoverage: true,
+  collectCoverageFrom: [
+    './src/**',
+    '!**/__tests__/__snapshots__/**',
+    '!**/enum/**',
+  ],
   coverageThreshold: {
     global: {
-      lines: 30
-    }
-  }
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
+    },
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
