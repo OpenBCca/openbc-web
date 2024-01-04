@@ -17,5 +17,5 @@ export enum ProjectStatusTypes {
   active = 'Active',
   completed = 'Completed',
   onHold = 'On Hold',
-  inActive = 'Inactive',
+  inactive = 'Inactive',
 }
