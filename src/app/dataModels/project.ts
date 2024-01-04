@@ -1,5 +1,5 @@
 import { Link } from './link';
-
+import { ProjectStatusTypes } from './project-status-types';
 export interface Project {
   title: string;
   description: string;
@@ -11,11 +11,4 @@ export interface Project {
   location?: string;
   status?: ProjectStatusTypes;
   contributors: string[];
-}
-
-export enum ProjectStatusTypes {
-  active = 'Active',
-  completed = 'Completed',
-  onHold = 'On Hold',
-  inactive = 'Inactive',
 }
