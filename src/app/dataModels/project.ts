@@ -1,5 +1,5 @@
 import { Link } from './link';
-import { ProjectStatusTypes } from './project-status-types';
+import ProjectStatusEnum from '@/enum/project-status-enum';
 export interface Project {
   title: string;
   description: string;
@@ -9,6 +9,6 @@ export interface Project {
   technologies?: string[];
   programAreas?: string;
   location?: string;
-  status?: ProjectStatusTypes;
+  status?: ProjectStatusEnum;
   contributors: string[];
 }
