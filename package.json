@@ -9,8 +9,7 @@
     "lint:check": "next lint",
     "startProduction": "next start",
     "test": "jest",
-    "testWatch": "jest --watch",
-    "test:coverage": "jest --coverage --config jest.config.mjs"
+    "testWatch": "jest --watch"
   },
   "dependencies": {
     "@emotion/react": "11.11.1",
@@ -39,12 +38,5 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "typescript": "5.2.2"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
-    ]
   }
 }
