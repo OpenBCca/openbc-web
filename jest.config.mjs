@@ -19,6 +19,7 @@ const config = {
     '!**/__tests__/__snapshots__/**',
     '!**/enum/**',
   ],
+  coverageReporters: ['text', 'lcov'],
   coverageThreshold: {
     global: {
       statements: 80,
