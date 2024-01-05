@@ -6,14 +6,10 @@ EXPOSE 3000
 
 FROM base as builder
 WORKDIR /app
+RUN npm install
 COPY . .
 RUN npm run build
 
-FROM base as dev
-WORKDIR /app
-ENV NODE_ENV=development
-RUN npm install
-CMD ["npm", "run", "start"]
 
 FROM base as production
 WORKDIR /app
@@ -24,5 +20,5 @@ USER nextjs
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-CMD ["npm", "run", "startProduction"]
+CMD ["node", ".next/standalone/server.js"]
 

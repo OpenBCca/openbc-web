@@ -3,13 +3,9 @@ services:
   web:
     build:
       context: .
-      target: dev
+      target: production
       dockerfile: Dockerfile
     container_name: local-site
     restart: always
-    volumes:
-      - ./:/app
-      - /app/node_modules
-      - /app/.next
     ports:
       - 3000:3000
