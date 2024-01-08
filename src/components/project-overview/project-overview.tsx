@@ -8,10 +8,7 @@ import './project-overview.scss';
 
 export default async function ProjectOverview() {
   let localProjectData;
-  if (APICALL) {
-    /// Change it to the case when it is reuqired to fetch the data from the API
-    console.log('Custom flag is true');
-  } else {
+  if (!APICALL) {
     localProjectData = await getLocalProjectData();
   }
 
