@@ -1,6 +1,5 @@
 import { Typography } from '@mui/material';
 import Container from '@mui/material/Container';
-import React from 'react';
 import './about.scss';
 
 export default function About() {

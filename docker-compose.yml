@@ -1,11 +1,10 @@
 version: '3'
+
 services:
   web:
     build:
       context: .
-      target: production
       dockerfile: Dockerfile
     container_name: local-site
-    restart: always
     ports:
       - 3000:3000
