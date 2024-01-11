@@ -7,7 +7,7 @@ export interface Project {
   partners?: string;
   languages: string[];
   technologies?: string[];
-  programAreas?: string;
+  programAreas?: string[];
   location?: string;
   status?: ProjectStatusEnum;
   contributors: string[];

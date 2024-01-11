@@ -46,7 +46,7 @@ export default function Project({
             )}
           </Typography>
           <Typography variant="body2" mt={0.5}>
-            <strong>Links:</strong>&nbsp;
+            <strong>Link(s):</strong>&nbsp;
             {links.map((link: LinkInterface, idx: number) => (
               <Link href={link.url} key={`project-link-${idx}`}>
                 {link.title}
@@ -57,7 +57,7 @@ export default function Project({
             <Typography variant="body2" mt={0.5}>
               {' '}
               <span>
-                <strong>Partners:</strong> {partners}
+                <strong>Partner(s):</strong> {partners}
               </span>
             </Typography>
           )}
@@ -71,7 +71,7 @@ export default function Project({
           )}
           {programAreas && (
             <Typography variant="body2" mt={0.5}>
-              <strong>Program Areas:</strong> {programAreas}
+              <strong>Program Area(s):</strong> {programAreas.join(', ')}
             </Typography>
           )}
           {contributors && (

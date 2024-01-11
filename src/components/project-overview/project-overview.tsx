@@ -20,6 +20,7 @@ export default async function ProjectOverview() {
                 languages={project.languages}
                 status={project.status}
                 location={project.location}
+                programAreas={project.programAreas}
                 contributors={project.contributors}
               />
             </Card>

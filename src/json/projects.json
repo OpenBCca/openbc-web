@@ -8,7 +8,7 @@
     "partners": "",
     "languages": ["TypeScript", "JavaScript", "SCSS"],
     "technologies": [],
-    "programAreas": "",
+    "programAreas": ["Civic Tech Infrastructure"],
     "location": "Remote",
     "status": "Active",
     "contributors": [
@@ -23,5 +23,22 @@
       "Alja Cekada",
       "Ahmad Akhtar"
     ]
+  },
+  {
+    "title": "Airbnb Regulation",
+    "description": "Illegal Airbnb listings are contributing to housing shortage in BC. This project aims to flag Airbnb listings that violates BC short-term rental policy.",
+    "links": [
+      {
+        "title": "GitHub",
+        "url": "https://github.com/OpenBCca/airbnb-regulation"
+      }
+    ],
+    "partners": "",
+    "languages": [],
+    "technologies": [],
+    "programAreas": ["Justice"],
+    "location": "Remote",
+    "status": "Active",
+    "contributors": ["Yang Su", "Tony-Thawatchai Saengthamchai"]
   }
 ]
