@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/header';
 import { Inter } from 'next/font/google';
@@ -11,7 +12,9 @@ export default function RootLayout({ children }: any) {
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        {children}
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          {children}
+        </AppRouterCacheProvider>
         <Footer />
       </body>
     </html>
