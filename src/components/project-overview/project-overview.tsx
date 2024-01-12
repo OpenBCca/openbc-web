@@ -2,7 +2,7 @@ import Project from '@/components/project/project';
 import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
 import { Box, Card } from '@mui/material';
 import { Fragment } from 'react';
-import { Project as ProjectInterface } from '../../app/dataModels/project';
+import { Project as ProjectInterface } from '@/app/dataModels/project';
 import './project-overview.scss';
 
 export default async function ProjectOverview() {
@@ -19,7 +19,6 @@ export default async function ProjectOverview() {
                 links={project.links}
                 languages={project.languages}
                 status={project.status}
-                location={project.location}
                 programAreas={project.programAreas}
                 contributors={project.contributors}
               />

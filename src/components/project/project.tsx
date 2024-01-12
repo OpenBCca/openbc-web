@@ -1,6 +1,15 @@
 'use client';
 
-import { Box, Card, CardContent, Link, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Link,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
 import { Project as ProjectInterface } from '../../app/dataModels/project';
@@ -13,13 +22,17 @@ export default function Project({
   languages,
   technologies,
   programAreas,
-  location,
   status,
   contributors,
 }: ProjectInterface) {
   return (
     <Box>
       <Card className="project-card">
+        <CardMedia
+          component="div"
+          className="card-media"
+          image="https://source.unsplash.com/random?wallpapers"
+        />
         <CardContent>
           <Typography
             variant="h5"
@@ -35,13 +48,6 @@ export default function Project({
             {status && (
               <span>
                 <strong>Status:</strong> {status}
-              </span>
-            )}
-          </Typography>
-          <Typography variant="body2" mt={0.5}>
-            {location && (
-              <span>
-                <strong>Location:</strong> {location}
               </span>
             )}
           </Typography>
@@ -80,6 +86,10 @@ export default function Project({
             </Typography>
           )}
         </CardContent>
+        <CardActions>
+          <Button size="small">View</Button>
+          <Button size="small">Github</Button>
+        </CardActions>
       </Card>
     </Box>
   );
