@@ -6,12 +6,9 @@ import { Project as ProjectInterface } from '../../app/dataModels/project';
 import './project-overview.scss';
 
 export default async function ProjectOverview() {
-  let localProjectData;
-  if (!process.env.apiCall) {
-    localProjectData = await getLocalProjectData();
-  }
-
-  return (
+  const localProjectData = await getLocalProjectData();
+  const githubApiCall = process.env.githubApiCall;
+  return !githubApiCall ? (
     <Box className="project-overview-container">
       {localProjectData.map((project: ProjectInterface) => (
         <Fragment key={project.title}>
@@ -30,6 +27,14 @@ export default async function ProjectOverview() {
           </Box>
         </Fragment>
       ))}
+    </Box>
+  ) : (
+    <Box className="project-overview-container">
+      <Box className="project-overview-card">
+        <Card>
+          <h3>Githib API</h3>
+        </Card>
+      </Box>
     </Box>
   );
 }

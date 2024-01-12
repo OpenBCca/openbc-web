@@ -12,7 +12,7 @@ const nextConfig = {
     tsconfigPath: './tsconfig.json',
   },
   env: {
-    apiCall: false,
+    githubApiCall: false,
   },
 };
 
