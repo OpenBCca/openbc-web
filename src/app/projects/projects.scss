@@ -1,19 +1,14 @@
 body {
   .projects-container {
-    padding: 32px 0;
+    padding-top: 32px;
   }
 
-  .card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  .projects-heading {
+    text-align: center;
+    padding-bottom: 16px;
   }
 
-  .card-media {
-    padding: 56.25% 0 0 0;
-  }
-
-  .card-content {
-    flex-grow: 1;
+  .projects-card {
+    height: auto;
   }
 }

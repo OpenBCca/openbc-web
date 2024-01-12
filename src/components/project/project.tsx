@@ -13,6 +13,7 @@ import {
 import React from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
 import { Project as ProjectInterface } from '../../app/dataModels/project';
+import './project.scss';
 
 export default function Project({
   title,
@@ -26,71 +27,69 @@ export default function Project({
   contributors,
 }: ProjectInterface) {
   return (
-    <Box>
-      <Card className="project-card">
-        <CardMedia
+    <Card className="project-card">
+      <CardMedia
+        component="div"
+        className="project-card-media"
+        image="https://source.unsplash.com/random?wallpapers"
+      />
+      <CardContent>
+        <Typography
+          variant="h5"
           component="div"
-          className="card-media"
-          image="https://source.unsplash.com/random?wallpapers"
-        />
-        <CardContent>
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{ fontFamily: 'inherit', fontWeight: '700' }}
-          >
-            {title}
-          </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'inherit' }}>
-            {description}
-          </Typography>
+          sx={{ fontFamily: 'inherit', fontWeight: '700' }}
+        >
+          {title}
+        </Typography>
+        <Typography variant="body2" sx={{ fontFamily: 'inherit' }}>
+          {description}
+        </Typography>
+        <Typography variant="body2" mt={0.5}>
+          {status && (
+            <span>
+              <strong>Status:</strong> {status}
+            </span>
+          )}
+        </Typography>
+        <Typography variant="body2" mt={0.5}>
+          <strong>Link(s):</strong>&nbsp;
+          {links.map((link: LinkInterface, idx: number) => (
+            <Link href={link.url} key={`project-link-${idx}`}>
+              {link.title}
+            </Link>
+          ))}
+        </Typography>
+        {partners && (
           <Typography variant="body2" mt={0.5}>
-            {status && (
-              <span>
-                <strong>Status:</strong> {status}
-              </span>
-            )}
+            {' '}
+            <span>
+              <strong>Partner(s):</strong> {partners}
+            </span>
           </Typography>
+        )}
+        <Typography variant="body2" mt={0.5}>
+          <strong>Languages:</strong> {languages.join(', ')}
+        </Typography>
+        {technologies && (
           <Typography variant="body2" mt={0.5}>
-            <strong>Link(s):</strong>&nbsp;
-            {links.map((link: LinkInterface, idx: number) => (
-              <Link href={link.url} key={`project-link-${idx}`}>
-                {link.title}
-              </Link>
-            ))}
+            <strong>Technologies:</strong> {technologies.join(', ')}
           </Typography>
-          {partners && (
-            <Typography variant="body2" mt={0.5}>
-              {' '}
-              <span>
-                <strong>Partner(s):</strong> {partners}
-              </span>
-            </Typography>
-          )}
+        )}
+        {programAreas && (
           <Typography variant="body2" mt={0.5}>
-            <strong>Languages:</strong> {languages.join(', ')}
+            <strong>Program Area(s):</strong> {programAreas.join(', ')}
           </Typography>
-          {technologies && (
-            <Typography variant="body2" mt={0.5}>
-              <strong>Technologies:</strong> {technologies.join(', ')}
-            </Typography>
-          )}
-          {programAreas && (
-            <Typography variant="body2" mt={0.5}>
-              <strong>Program Area(s):</strong> {programAreas.join(', ')}
-            </Typography>
-          )}
-          {contributors && (
-            <Typography variant="body2" mt={0.5}>
-              <strong>Contributors:</strong> {contributors.join(', ')}
-            </Typography>
-          )}
-        </CardContent>
-        <CardActions>
-          <Button size="small">View</Button>
-          <Button size="small">Github</Button>
-        </CardActions>
-      </Card>
-    </Box>
+        )}
+        {contributors && (
+          <Typography variant="body2" mt={0.5}>
+            <strong>Contributors:</strong> {contributors.join(', ')}
+          </Typography>
+        )}
+      </CardContent>
+      <CardActions className="project-card-buttons">
+        <Button size="small">View</Button>
+        <Button size="small">Github</Button>
+      </CardActions>
+    </Card>
   );
 }
