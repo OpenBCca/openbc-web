@@ -1,7 +1,7 @@
 import { Container, CssBaseline, Grid } from '@mui/material';
 
 import { Project as ProjectInterface } from '@/app/dataModels/project';
-import Project from '@/components/project/project';
+import Project from '@/components/project-card/project-card';
 import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
 import './projects.scss';
 
@@ -9,7 +9,7 @@ export default async function Projects() {
   const localProjectData = await getLocalProjectData();
 
   return (
-    <Container className="projects-container" maxWidth="lg">
+    <Container className="projects-container">
       <CssBaseline />
       <main>
         <h1 className="projects-heading">Our Projects</h1>

@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  Box,
   Button,
   Card,
   CardActions,
@@ -13,7 +12,7 @@ import {
 import React from 'react';
 import { Link as LinkInterface } from '../../app/dataModels/link';
 import { Project as ProjectInterface } from '../../app/dataModels/project';
-import './project.scss';
+import './project-card.scss';
 
 export default function Project({
   title,
@@ -51,6 +50,7 @@ export default function Project({
             </span>
           )}
         </Typography>
+        <Typography variant="body2">{status}</Typography>
         <Typography variant="body2" mt={0.5}>
           <strong>Link(s):</strong>&nbsp;
           {links.map((link: LinkInterface, idx: number) => (
