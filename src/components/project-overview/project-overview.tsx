@@ -2,13 +2,12 @@ import Project from '@/components/project/project';
 import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
 import { Box, Card } from '@mui/material';
 import { Fragment } from 'react';
-import { APICALL } from '../../../constants';
 import { Project as ProjectInterface } from '../../app/dataModels/project';
 import './project-overview.scss';
 
 export default async function ProjectOverview() {
   let localProjectData;
-  if (!APICALL) {
+  if (!process.env.apiCall) {
     localProjectData = await getLocalProjectData();
   }
 
