@@ -10,13 +10,13 @@ body {
 
   .project-card-item {
     position: relative;
-    height: auto;
   }
 
   .project-card-status-label {
     position: absolute;
     top: 40px;
-    right: 16px;
+    right: 8px;
     color: white;
+    border-radius: 6px;
   }
 }
