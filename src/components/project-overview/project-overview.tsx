@@ -28,13 +28,5 @@ export default async function ProjectOverview() {
         </Fragment>
       ))}
     </Box>
-  ) : (
-    <Box className="project-overview-container">
-      <Box className="project-overview-card">
-        <Card>
-          <h3>Githib API</h3>
-        </Card>
-      </Box>
-    </Box>
-  );
+  ) : null; // This line should be revised when GITHUB API CALL is ready
 }
