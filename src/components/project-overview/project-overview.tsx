@@ -17,10 +17,7 @@ export default async function ProjectOverview() {
                 title={project.title}
                 description={project.description}
                 links={project.links}
-                languages={project.languages}
                 status={project.status}
-                programAreas={project.programAreas}
-                contributors={project.contributors}
               />
             </Card>
           </Box>

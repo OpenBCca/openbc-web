@@ -1,5 +1,7 @@
 'use client';
 
+import { Link as LinkInterface } from '@/app/dataModels/link';
+import { Project as ProjectInterface } from '@/app/dataModels/project';
 import {
   Button,
   Card,
@@ -10,20 +12,16 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
-import { Link as LinkInterface } from '../../app/dataModels/link';
-import { Project as ProjectInterface } from '../../app/dataModels/project';
 import './project-card.scss';
 
 export default function Project({
   title,
   description,
   links,
-  partners,
   languages,
+  tools,
   technologies,
-  programAreas,
-  status,
-  contributors,
+  programAreas, // status,
 }: ProjectInterface) {
   return (
     <Card className="project-card">
@@ -40,49 +38,66 @@ export default function Project({
         >
           {title}
         </Typography>
-        <Typography variant="body2" sx={{ fontFamily: 'inherit' }}>
+        <Typography
+          variant="body2"
+          sx={{ fontFamily: 'inherit' }}
+          mt={1}
+          mb={2}
+        >
           {description}
         </Typography>
-        <Typography variant="body2" mt={0.5}>
-          {status && (
-            <span>
-              <strong>Status:</strong> {status}
-            </span>
-          )}
-        </Typography>
-        <Typography variant="body2">{status}</Typography>
-        <Typography variant="body2" mt={0.5}>
-          <strong>Link(s):</strong>&nbsp;
-          {links.map((link: LinkInterface, idx: number) => (
-            <Link href={link.url} key={`project-link-${idx}`}>
-              {link.title}
-            </Link>
-          ))}
-        </Typography>
-        {partners && (
-          <Typography variant="body2" mt={0.5}>
-            {' '}
-            <span>
-              <strong>Partner(s):</strong> {partners}
-            </span>
+
+        {languages && (
+          <Typography component="div" variant="body2" mt={1}>
+            <Typography variant="body2">Languages</Typography>
+            <Typography variant="body2">
+              <strong>{languages.join(', ')}</strong>
+            </Typography>
           </Typography>
         )}
-        <Typography variant="body2" mt={0.5}>
-          <strong>Languages:</strong> {languages.join(', ')}
-        </Typography>
+
+        {tools && (
+          <Typography component="div" variant="body2" mt={1}>
+            <Typography variant="body2">Tools</Typography>
+            <Typography variant="body2">
+              <strong>{tools.join(', ')}</strong>
+            </Typography>
+          </Typography>
+        )}
+
         {technologies && (
-          <Typography variant="body2" mt={0.5}>
-            <strong>Technologies:</strong> {technologies.join(', ')}
+          <Typography component="div" variant="body2" mt={1}>
+            <Typography variant="body2">Technologies</Typography>
+            <Typography variant="body2">
+              <strong>{technologies.join(', ')}</strong>
+            </Typography>
           </Typography>
         )}
+
         {programAreas && (
-          <Typography variant="body2" mt={0.5}>
-            <strong>Program Area(s):</strong> {programAreas.join(', ')}
+          <Typography component="div" variant="body2" mt={1}>
+            <Typography variant="body2">Program Areas</Typography>
+            <Typography variant="body2">
+              <strong>{programAreas.join(', ')}</strong>
+            </Typography>
           </Typography>
         )}
-        {contributors && (
-          <Typography variant="body2" mt={0.5}>
-            <strong>Contributors:</strong> {contributors.join(', ')}
+
+        {links && (
+          <Typography component="div" variant="body2" mt={1}>
+            Link(s)
+            <Typography variant="body2">
+              {links.map((link: LinkInterface, idx: number) => (
+                <Link
+                  href={link.url}
+                  key={`project-link-${idx}`}
+                  color="inherit"
+                  underline="none"
+                >
+                  <strong>{link.title}</strong>
+                </Link>
+              ))}
+            </Typography>
           </Typography>
         )}
       </CardContent>

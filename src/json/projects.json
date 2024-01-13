@@ -1,13 +1,13 @@
 [
   {
-    "title": "Project Overview",
+    "title": "OpenBC Website",
     "description": "OpenBC is a volunteer-driven organization that brings together technologists, designers, data analysts, and community members to work on projects that address civic and social challenges in BC using technology and innovation. They host hackathons, workshops, and events where participants collaborate to create solutions for local issues.",
     "links": [
       { "title": "GitHub", "url": "https://github.com/OpenBCca/openbc-web" }
     ],
-    "partners": "",
     "languages": ["TypeScript", "JavaScript", "SCSS"],
-    "technologies": [],
+    "tools": ["Figma", "GitHub"],
+    "technologies": ["Next.js", "Jest", "MUI"],
     "programAreas": ["Civic Tech Infrastructure"],
     "location": "Remote",
     "status": "Active",
@@ -33,8 +33,8 @@
         "url": "https://github.com/OpenBCca/airbnb-regulation"
       }
     ],
-    "partners": "",
     "languages": [],
+    "tools": [],
     "technologies": [],
     "programAreas": ["Justice"],
     "location": "Remote",

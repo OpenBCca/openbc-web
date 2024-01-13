@@ -32,11 +32,12 @@ export default async function Projects() {
                 <Project
                   title={project.title}
                   description={project.description}
+                  projectLead={project.projectLead}
                   links={project.links}
+                  tools={project.tools}
                   languages={project.languages}
-                  status={project.status}
+                  technologies={project.technologies}
                   programAreas={project.programAreas}
-                  contributors={project.contributors}
                 />
               </Grid>
             ))}
