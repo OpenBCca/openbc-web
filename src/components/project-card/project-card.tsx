@@ -103,7 +103,6 @@ export default function Project({
       </CardContent>
       <CardActions className="project-card-buttons">
         <Button size="small">View</Button>
-        <Button size="small">Github</Button>
       </CardActions>
     </Card>
   );

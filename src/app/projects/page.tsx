@@ -1,8 +1,9 @@
-import { Container, CssBaseline, Grid } from '@mui/material';
+import { Chip, Container, CssBaseline, Grid } from '@mui/material';
 
 import { Project as ProjectInterface } from '@/app/dataModels/project';
 import Project from '@/components/project-card/project-card';
 import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
+import getProjectStatusColor from '@/utils/get-project-status-color/get-project-status-color';
 import './projects.scss';
 
 export default async function Projects() {
@@ -23,12 +24,19 @@ export default async function Projects() {
             {localProjectData.map((project: ProjectInterface) => (
               <Grid
                 item
-                className="projects-card"
+                className="project-card-item"
                 key={project.title}
                 xs={12}
                 sm={6}
                 md={4}
               >
+                <Chip
+                  className="project-card-status-label"
+                  label={project.status}
+                  sx={{
+                    bgcolor: getProjectStatusColor(project.status),
+                  }}
+                />
                 <Project
                   title={project.title}
                   description={project.description}
