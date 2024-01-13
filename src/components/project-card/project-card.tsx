@@ -3,14 +3,13 @@
 import { Link as LinkInterface } from '@/app/dataModels/link';
 import { Project as ProjectInterface } from '@/app/dataModels/project';
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
-  Link,
+  IconButton,
   Typography,
 } from '@mui/material';
+import Image from 'next/image';
 import React from 'react';
 import './project-card.scss';
 
@@ -49,61 +48,74 @@ export default function Project({
 
         {languages && (
           <Typography component="div" variant="body2" mt={1}>
-            <Typography variant="body2">Languages</Typography>
-            <Typography variant="body2">
-              <strong>{languages.join(', ')}</strong>
+            <Typography variant="body2" sx={{ color: 'grey' }}>
+              Languages
+            </Typography>
+            <Typography variant="body2" sx={{ fontWeight: '700' }}>
+              {languages.join(', ')}
             </Typography>
           </Typography>
         )}
 
         {tools && (
           <Typography component="div" variant="body2" mt={1}>
-            <Typography variant="body2">Tools</Typography>
-            <Typography variant="body2">
-              <strong>{tools.join(', ')}</strong>
+            <Typography variant="body2" sx={{ color: 'grey' }}>
+              Tools
+            </Typography>
+            <Typography variant="body2" sx={{ fontWeight: '700' }}>
+              {tools.join(', ')}
             </Typography>
           </Typography>
         )}
 
         {technologies && (
           <Typography component="div" variant="body2" mt={1}>
-            <Typography variant="body2">Technologies</Typography>
-            <Typography variant="body2">
-              <strong>{technologies.join(', ')}</strong>
+            <Typography variant="body2" sx={{ color: 'grey' }}>
+              Technologies
+            </Typography>
+            <Typography variant="body2" sx={{ fontWeight: '700' }}>
+              {technologies.join(', ')}
             </Typography>
           </Typography>
         )}
 
         {programAreas && (
           <Typography component="div" variant="body2" mt={1}>
-            <Typography variant="body2">Program Areas</Typography>
-            <Typography variant="body2">
-              <strong>{programAreas.join(', ')}</strong>
+            <Typography variant="body2" sx={{ color: 'grey' }}>
+              Program Areas
+            </Typography>
+            <Typography variant="body2" sx={{ fontWeight: '700' }}>
+              {programAreas.join(', ')}
             </Typography>
           </Typography>
         )}
 
         {links && (
           <Typography component="div" variant="body2" mt={1}>
-            Link(s)
+            <Typography variant="body2" sx={{ color: 'grey' }}>
+              Links
+            </Typography>
             <Typography variant="body2">
               {links.map((link: LinkInterface, idx: number) => (
-                <Link
+                <IconButton
                   href={link.url}
                   key={`project-link-${idx}`}
-                  color="inherit"
-                  underline="none"
+                  sx={{
+                    marginLeft: '-8px',
+                  }}
                 >
-                  <strong>{link.title}</strong>
-                </Link>
+                  <Image
+                    src="/assets/github-mark.svg"
+                    alt="GitHub SVG"
+                    width={20}
+                    height={20}
+                  />
+                </IconButton>
               ))}
             </Typography>
           </Typography>
         )}
       </CardContent>
-      <CardActions className="project-card-buttons">
-        <Button size="small">View</Button>
-      </CardActions>
     </Card>
   );
 }
