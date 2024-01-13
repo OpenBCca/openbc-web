@@ -95,18 +95,12 @@ export default function Project({
             <Typography variant="body2" sx={{ color: 'grey' }}>
               Links
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" mt={-0.25} ml={-1}>
               {links.map((link: LinkInterface, idx: number) => (
-                <IconButton
-                  href={link.url}
-                  key={`project-link-${idx}`}
-                  sx={{
-                    marginLeft: '-8px',
-                  }}
-                >
+                <IconButton href={link.url} key={`project-link-${idx}`}>
                   <Image
                     src="/assets/github-mark.svg"
-                    alt="GitHub SVG"
+                    alt={link.title}
                     width={20}
                     height={20}
                   />
