@@ -11,6 +11,9 @@ const nextConfig = {
   typescript: {
     tsconfigPath: './tsconfig.json',
   },
+  env: {
+    githubApiCall: false,
+  },
 };
 
 module.exports = nextConfig;
