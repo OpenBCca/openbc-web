@@ -1,11 +1,14 @@
 body {
   .projects-container {
-    padding-top: 32px;
+    margin-top: 32px;
   }
 
   .projects-heading {
     text-align: center;
-    padding-bottom: 16px;
+  }
+
+  .projects-cards {
+    margin-top: 32px;
   }
 
   .project-card-item {

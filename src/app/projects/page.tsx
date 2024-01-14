@@ -1,4 +1,11 @@
-import { Chip, Container, CssBaseline, Grid } from '@mui/material';
+import {
+  Box,
+  Chip,
+  Container,
+  CssBaseline,
+  Grid,
+  Typography,
+} from '@mui/material';
 
 import { Project as ProjectInterface } from '@/app/dataModels/project';
 import Project from '@/components/project-card/project-card';
@@ -10,11 +17,17 @@ export default async function Projects() {
   const localProjectData = await getLocalProjectData();
 
   return (
-    <Container className="projects-container">
+    <Container className="projects-container" component="main">
       <CssBaseline />
-      <main>
-        <h1 className="projects-heading">Our Projects</h1>
-        <Container>
+      <Box>
+        <Typography
+          className="projects-heading"
+          variant="h4"
+          sx={{ fontWeight: '700' }}
+        >
+          Our Projects
+        </Typography>
+        <Container className="projects-cards">
           <Grid
             container
             spacing={4}
@@ -51,7 +64,7 @@ export default async function Projects() {
             ))}
           </Grid>
         </Container>
-      </main>
+      </Box>
     </Container>
   );
 }
