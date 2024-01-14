@@ -7,7 +7,8 @@ import './project-overview.scss';
 
 export default async function ProjectOverview() {
   const localProjectData = await getLocalProjectData();
-  return (
+  const githubApiCall = process.env.githubApiCall;
+  return !githubApiCall ? (
     <Box className="project-overview-container">
       {localProjectData.map((project: ProjectInterface) => (
         <Fragment key={project.title}>
@@ -24,5 +25,5 @@ export default async function ProjectOverview() {
         </Fragment>
       ))}
     </Box>
-  );
+  ) : null; // This line should be revised when GITHUB API CALL is ready
 }
