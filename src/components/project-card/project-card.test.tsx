@@ -16,7 +16,7 @@ describe('Project', () => {
     languages: ['JavaScript', 'TypeScript'],
     tools: ['React', 'Next.js'],
     technologies: ['MUI', 'Jest'],
-    programAreas: ['Web Development'],
+    programAreas: ['Test Program Areas'],
   };
 
   it('should render project card with title and description', () => {
