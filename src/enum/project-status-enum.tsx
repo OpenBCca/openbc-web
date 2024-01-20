@@ -3,6 +3,7 @@ const enum ProjectStatusEnum {
   completed = 'Completed',
   onHold = 'On Hold',
   inactive = 'Inactive',
+  comingSoon = 'Coming Soon',
 }
 
 export default ProjectStatusEnum;

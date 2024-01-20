@@ -1,54 +1,70 @@
-'use client';
+import {
+  Box,
+  Chip,
+  Container,
+  CssBaseline,
+  Grid,
+  Typography,
+} from '@mui/material';
 
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
+import { Project as ProjectInterface } from '@/app/dataModels/project';
+import Project from '@/components/project-card/project-card';
+import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
+import getProjectStatusColor from '@/utils/get-project-status-color/get-project-status-color';
 import './projects.scss';
 
-const cards = [1, 2, 3, 4, 5, 6];
+export default async function Projects() {
+  const localProjectData = await getLocalProjectData();
 
-export default function Album() {
   return (
-    <ThemeProvider theme={createTheme()}>
+    <Container className="projects-container" component="main">
       <CssBaseline />
-      <main>
-        <h1 className="centered-elements">Projects</h1>
-        {/* hero unit */}
-        <Container className="projects-container" maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className="card">
-                  <CardMedia
-                    component="div"
-                    className="card-media"
-                    image="https://source.unsplash.com/random?wallpapers"
-                  />
-                  <CardContent className="card-content">
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Project
-                    </Typography>
-                    <Typography>Sample Text</Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Github</Button>
-                  </CardActions>
-                </Card>
+      <Box>
+        <Typography
+          className="projects-heading"
+          variant="h4"
+          sx={{ fontWeight: '700' }}
+        >
+          Our Projects
+        </Typography>
+        <Container className="projects-cards">
+          <Grid
+            container
+            spacing={4}
+            justifyContent="center"
+            alignItems="stretch"
+          >
+            {localProjectData.map((project: ProjectInterface) => (
+              <Grid
+                item
+                className="project-card-item"
+                key={project.title}
+                xs={12}
+                sm={6}
+                md={4}
+              >
+                <Chip
+                  className="project-card-status-label"
+                  label={project.status}
+                  sx={{
+                    bgcolor: getProjectStatusColor(project.status),
+                  }}
+                />
+                <Project
+                  title={project.title}
+                  description={project.description}
+                  projectLead={project.projectLead}
+                  links={project.links}
+                  tools={project.tools}
+                  languages={project.languages}
+                  technologies={project.technologies}
+                  programAreas={project.programAreas}
+                />
               </Grid>
             ))}
           </Grid>
         </Container>
-      </main>
-    </ThemeProvider>
+      </Box>
+    </Container>
   );
 }

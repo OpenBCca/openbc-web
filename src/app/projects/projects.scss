@@ -1,19 +1,25 @@
 body {
   .projects-container {
-    padding: 64px 0;
+    margin-top: 32px;
   }
 
-  .card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  .projects-heading {
+    text-align: center;
   }
 
-  .card-media {
-    padding: 56.25% 0 0 0;
+  .projects-cards {
+    margin-top: 32px;
   }
-  
-  .card-content {
-    flex-grow: 1;
+
+  .project-card-item {
+    position: relative;
+  }
+
+  .project-card-status-label {
+    position: absolute;
+    top: 40px;
+    right: 8px;
+    color: white;
+    border-radius: 6px;
   }
 }
