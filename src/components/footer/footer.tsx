@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Link,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Container, IconButton, Link } from '@mui/material';
 import Image from 'next/image';
 import './footer.scss';
 
@@ -17,13 +10,15 @@ function Footer() {
       <Container className="footer">
         <Box className="footer__wrapper">
           <Box className="footer__menu">
-            <Link className="footer__logo">OpenBC</Link>
+            <Link href="/" className="footer__logo">
+              OpenBC
+            </Link>
             <Box className="footer__buttons">
-              <Link href="#" className="footer__button">
+              <Link href="/about" className="footer__button">
                 About
               </Link>
               <Link
-                href="#"
+                href="/join-us"
                 className="footer__button footer__button--highlight"
               >
                 Join Us!
