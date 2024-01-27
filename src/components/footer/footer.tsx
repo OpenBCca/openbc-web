@@ -1,87 +1,87 @@
 'use client';
+
 import {
   Box,
   Button,
   Container,
-  Grid,
   IconButton,
+  Link,
   Typography,
-  useMediaQuery,
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
-import Link from 'next/link';
 import './footer.scss';
 
 function Footer() {
-  const theme = useTheme();
-  const mobileBreakpoint = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Box component="footer" className="footer-container">
-      <Container>
-        <Grid container spacing={2} className="footer">
-          <Grid item xs={12} md={4} className="footer__text-container">
-            <Link href="#" className="footer__link">
-              <Typography variant="h6">OpenBC</Typography>
-            </Link>
+      <Container className="footer">
+        <Box className="footer__wrapper">
+          <Box className="footer__menu">
+            <Link className="footer__logo">OpenBC</Link>
+            <Box className="footer__buttons">
+              <Link href="#" className="footer__button">
+                About
+              </Link>
+              <Link
+                href="#"
+                className="footer__button footer__button--highlight"
+              >
+                Join Us!
+              </Link>
+              <Link href="#" className="footer__button">
+                Contact Us
+              </Link>
+            </Box>
+          </Box>
+          <form className="footer__newsletter">
+            <label htmlFor="" className="footer__label">
+              Get the latest updates about OpenBC
+            </label>
+            <Box className="footer__group">
+              <input
+                className="footer__input"
+                placeholder="Enter your Email."
+              />
 
-            <Typography variant="body2">
-              Volunteer-driven community for positive impact in British Columbia
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={4}
-            className={mobileBreakpoint ? '' : 'footer__nav-container'}
-          >
-            <Button variant="text" size="small" href="/projects">
-              Projects
-            </Button>
-            <Button variant="text" size="small" href="/join-us">
-              Join Us
-            </Button>
-            <Button variant="text" size="small" href="/about">
-              About
-            </Button>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={4}
-            className={mobileBreakpoint ? '' : 'footer__link-container'}
-          >
+              <Button className="footer__subscribe-button">Subscribe</Button>
+            </Box>
+          </form>
+        </Box>
+        <Box className="footer__wrapper">
+          <Box className="footer__social-icons">
             <IconButton
+              className="footer__icon-button"
               href="https://github.com/OpenBCca"
-              aria-label="GitHub Account"
+              aria-label="github account"
             >
               <Image
                 src="/assets/github_Icon.svg"
-                alt="github account"
+                alt="GitHub"
                 width={20}
                 height={20}
               />
             </IconButton>
             <IconButton
+              className="footer__icon-button"
               href="https://www.linkedin.com/company/openbc/"
-              aria-label="LinkedIn Account"
+              aria-label="linkedin account"
             >
               <Image
                 src="/assets/linkedin_Icon.svg"
-                alt="Linkedin account"
+                alt="LinkedIn"
                 width={20}
                 height={20}
               />
             </IconButton>
-          </Grid>
-        </Grid>
-        <Box className="copyright">
-          <Typography variant="body2" className="copyright__text">
+          </Box>
+          <Box className="footer__links">
             <Link href="#" className="footer__link">
-              <strong>OpenBC</strong>
-            </Link>{' '}
-            © 2024 All Rights Reserved
-          </Typography>
+              Terms of Service
+            </Link>
+            <Link href="#" className="footer__link">
+              Privacy Policy
+            </Link>
+          </Box>
         </Box>
       </Container>
     </Box>
