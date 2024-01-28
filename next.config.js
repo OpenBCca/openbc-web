@@ -1,19 +1,19 @@
 /** @type {import('next').NextConfig} */
 
+const basePath = process.env.NODE_ENV === 'production' ? '/openbc-web' : '';
+const output = process.env.NODE_ENV === 'production' ? 'export' : 'standalone';
+const distDir = process.env.NODE_ENV === 'production' ? 'dist' : '.next';
+
 const nextConfig = {
-  basePath: process.env.NODE_ENV === 'production' ? '/openbc-web' : '',
-  output: 'export',
-  distDir: 'dist',
-  githubApiToken: process.env.GITHUB_API_KEY,
+  basePath: basePath,
+  output: output,
+  distDir: distDir,
   images: {
     unoptimized: true,
   },
   typescript: {
     tsconfigPath: './tsconfig.json',
-  },
-  env: {
-    githubApiCall: false,
-  },
+  }
 };
 
 module.exports = nextConfig;
