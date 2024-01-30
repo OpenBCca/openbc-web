@@ -4,10 +4,22 @@ body {
     flex-direction: column;
     height: 100%;
     margin-top: 2%;
+    
+    .sub-container-2-col {
+      display: flex; 
+      direction: row; 
+      margin: 2em; 
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    .join-us-header {
-      font-family: inherit;
+    .sub-header {
+      font-size: 1.5rem;
       font-weight: 700;
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.25s ease-in-out;
+      margin-bottom: 0.5rem;
     }
   }
 }
