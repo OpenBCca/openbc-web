@@ -37,12 +37,14 @@ function Banner() {
             <Button
               className={`${lato.className} banner__button`}
               variant="outlined"
+              size="large"
             >
               Become A Partner
             </Button>
             <Button
               className={`${lato.className} banner__button`}
               variant="contained"
+              size="large"
             >
               Join Us
             </Button>
