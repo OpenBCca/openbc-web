@@ -14,6 +14,8 @@ export default function JoinUs() {
           <Image
             src="https://source.unsplash.com/random?wallpapers"
             alt="Description"
+            width={500}
+            height={500}
             style={{ width: '100%' }}
           />
         </Box>
@@ -142,7 +144,9 @@ export default function JoinUs() {
           <Image
             src="https://source.unsplash.com/random?wallpapers"
             alt="Description"
-            style={{ width: '80%', verticalAlign: 'top' }}
+            width={500}
+            height={500}
+            style={{ width: '80%', height: '80%' }}
           />
         </Box>
       </Box>

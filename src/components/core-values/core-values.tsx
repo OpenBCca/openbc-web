@@ -9,7 +9,9 @@ export default function CoreValues() {
         <Image
           src="https://source.unsplash.com/random?wallpapers"
           alt="Description"
-          style={{ width: '80%' }}
+          width={500}
+          height={500}
+          style={{ width: '80%', height: 'auto' }}
         />
       </Box>
       <Box sx={{ width: '80%' }}>
