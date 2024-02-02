@@ -22,8 +22,8 @@ export default function JoinUs() {
             Our Mission
           </Typography>
           <Typography variant="body2" paragraph>
-            At OpenBC, we're passionate about leveraging your unique abilities
-            for the advancement of our province.
+            At OpenBC, we&apos;re passionate about leveraging your unique
+            abilities for the advancement of our province.
             <strong>
               Contribute to Open Source Projects for BC, from Anywhere, with
               OpenBC.
