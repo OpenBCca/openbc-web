@@ -1,0 +1,16 @@
+body {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 2%;
+
+    .sub-container-2-col {
+      display: flex;
+      direction: row;
+      margin: 2em;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
