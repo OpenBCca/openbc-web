@@ -2,6 +2,7 @@ import CoreValues from '@/components/core-values/core-values';
 import Faq from '@/components/faq/faq';
 import { Box, Divider, Paper, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
+import Image from 'next/image';
 import React from 'react';
 import './join-us.scss';
 
@@ -10,7 +11,7 @@ export default function JoinUs() {
     <Container maxWidth="lg" className="container">
       <Box className="sub-container-2-col">
         <Box sx={{ width: '50%' }}>
-          <img
+          <Image
             src="https://source.unsplash.com/random?wallpapers"
             alt="Description"
             style={{ width: '100%' }}
@@ -138,7 +139,7 @@ export default function JoinUs() {
           <CoreValues />
         </Box>
         <Box sx={{ width: '30%' }}>
-          <img
+          <Image
             src="https://source.unsplash.com/random?wallpapers"
             alt="Description"
             style={{ width: '80%', verticalAlign: 'top' }}

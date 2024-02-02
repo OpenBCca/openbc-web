@@ -1,11 +1,12 @@
 import { Box, Typography } from '@mui/material';
+import Image from 'next/image';
 import React from 'react';
 
 export default function CoreValues() {
   return (
     <Box className="sub-container-2-col">
       <Box sx={{ width: '20%' }}>
-        <img
+        <Image
           src="https://source.unsplash.com/random?wallpapers"
           alt="Description"
           style={{ width: '80%' }}
