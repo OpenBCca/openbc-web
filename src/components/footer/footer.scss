@@ -1,25 +1,25 @@
 .footer-container {
   background-color: #FAFAFA;
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .footer {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 4rem;
 
   @media only screen and (max-width:640px) {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    gap: 32px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: center;
 
     @media only screen and (max-width:640px) {
@@ -30,7 +30,7 @@
 
     &:last-child {
       border-top: 1px solid #E5E5E5;
-      padding-top: 32px;
+      padding-top: 2rem;
     }
   }
 
@@ -56,7 +56,7 @@
 
   &__buttons {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
   }
@@ -73,9 +73,8 @@
 
     &--highlight {
       border-radius: 20px;
-      padding: 4px 20px;
-      background-color: #1B83E8;
-      color: #FFFFFF;
+      padding: 0.25rem 1.25rem;
+      background-color: #E1E1E1;
     }
   }
 
@@ -83,7 +82,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 1.125rem;
     min-width: 40%;
 
     @media only screen and (max-width:640px) {
@@ -94,7 +93,7 @@
   &__group {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
     align-self: stretch;
 
     @media only screen and (max-width:640px) {
@@ -109,9 +108,9 @@
 
   &__input {
     display: flex;
-    padding: 8px 12px;
+    padding: 0.5rem 0.75rem;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
     flex: 1 0 0;
     align-self: stretch;
     border-radius: 6px;
@@ -128,10 +127,10 @@
 
   &__subscribe-button {
     display: flex;
-    padding: 10px 16px;
+    padding: 0.625rem 1rem;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     border-radius: 6px;
     border: 1.8px solid #424242;
     text-transform: none;
@@ -149,7 +148,7 @@
 
   &__links {
     display: flex;
-    gap: 32px;
+    gap: 2rem;
   }
 
   &__link {
