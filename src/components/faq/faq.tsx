@@ -1,17 +1,18 @@
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Box, Divider, Typography } from '@mui/material';
 import React from 'react';
+import './faq.scss';
 
 export default function Faq() {
   return (
-    <Box sx={{ width: '50%', margin: 'auto' }}>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+    <Box className="box-compressed__margin">
+      <Box className="display-flex__space-between">
         <Typography variant="body2" paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit?
         </Typography>
         <KeyboardArrowDownIcon />
       </Box>
-      <Divider sx={{ borderRadius: 1 }} />
+      <Divider className="divider" />
     </Box>
   );
 }

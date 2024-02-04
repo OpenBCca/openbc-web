@@ -1,6 +1,6 @@
 import CoreValues from '@/components/core-values/core-values';
 import Faq from '@/components/faq/faq';
-import { Box, Divider, Paper, Typography } from '@mui/material';
+import { Box, Divider, Link, Paper, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
 import Image from 'next/image';
 import React from 'react';
@@ -10,7 +10,7 @@ export default function JoinUs() {
   return (
     <Container maxWidth="lg" className="container">
       <Box className="sub-container-2-col">
-        <Box sx={{ width: '50%' }}>
+        <Box className="box-size-50">
           <Image
             src="https://source.unsplash.com/random?wallpapers"
             alt="Description"
@@ -19,13 +19,15 @@ export default function JoinUs() {
             style={{ width: '100%' }}
           />
         </Box>
-        <Box sx={{ width: '50%', marginX: '2em' }}>
-          <Typography className="sub-header" variant="h5">
+        <Box className="box-size-50__marginX">
+          <Typography className="sub-header" variant="h2">
             Our Mission
           </Typography>
           <Typography variant="body2" paragraph>
             At OpenBC, we&apos;re passionate about leveraging your unique
             abilities for the advancement of our province.
+          </Typography>
+          <Typography variant="body2" paragraph>
             <strong>
               Contribute to Open Source Projects for BC, from Anywhere, with
               OpenBC.
@@ -33,7 +35,7 @@ export default function JoinUs() {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ marginY: '4em' }}>
+      <Box className="margin-left-4 margin-bottom-4">
         <Typography className="sub-header" variant="h5">
           Visions
         </Typography>
@@ -44,18 +46,22 @@ export default function JoinUs() {
           arcu. Mauris blandit egestas nibh.
         </Typography>
       </Box>
-      <Box sx={{ width: '40%', alignSelf: 'center' }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h5">Volunteers</Typography>
-          <Typography variant="h5">Be A Partner</Typography>
+      <Box className="box-size-40__center">
+        <Box className="display-flex__space-between">
+          <Link href="#" className="link-no-decorated" variant="h5">
+            Volunteers
+          </Link>
+          <Link href="#" className="link-no-decorated" variant="h5">
+            Be A Partner
+          </Link>
         </Box>
-        <Divider sx={{ borderRadius: 1 }} />
+        <Divider className="divider" />
       </Box>
       <Box className="sub-container-2-col">
-        <Box sx={{ width: '50%' }}>
+        <Box className="box-size-50">
           <Typography className="sub-header" variant="h5">
             <strong>
-              Ready to contribute to British Columbia through Open source
+              Ready to contribute to British Columbia through Open Source
               projects?
             </strong>
           </Typography>
@@ -64,66 +70,45 @@ export default function JoinUs() {
             community.
           </Typography>
         </Box>
-        <Box sx={{ width: '50%' }}>
-          <Box sx={{ display: 'flex' }}>
+        <Box className="box-size-50">
+          <Box className="display-flex">
             <Paper className="square">
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '100%',
-                }}
-              >
+              <Box className="box-number">
                 <Typography>1</Typography>
               </Box>
             </Paper>
-            <Typography sx={{ marginLeft: '1em' }} variant="h5">
+            <Typography className="margin-left-1" variant="h5">
               Tell Us About Yourself
             </Typography>
           </Box>
-          <Typography sx={{ marginLeft: '4em' }} variant="body2" paragraph>
+          <Typography className="margin-left-4" variant="body2" paragraph>
             Fill out our <u>2 minute form</u> so we can help match you with
             opportunities
           </Typography>
-          <Box sx={{ display: 'flex' }}>
+          <Box className="display-flex">
             <Paper className="square">
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '100%',
-                }}
-              >
+              <Box className="box-number">
                 <Typography>2</Typography>
               </Box>
             </Paper>
-            <Typography sx={{ marginLeft: '1em' }} variant="h5">
+            <Typography className="margin-left-1" variant="h5">
               Onboarding
             </Typography>
           </Box>
-          <Typography sx={{ marginLeft: '4em' }} variant="body2" paragraph>
+          <Typography className="margin-left-4" variant="body2" paragraph>
             Tortor interdumd pulvinar risus. Cursus in odio aenean.
           </Typography>
-          <Box sx={{ display: 'flex' }}>
+          <Box className="display-flex">
             <Paper className="square">
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '100%',
-                }}
-              >
+              <Box className="box-number">
                 <Typography>3</Typography>
               </Box>
             </Paper>
-            <Typography sx={{ marginLeft: '1em' }} variant="h5">
+            <Typography className="margin-left-1" variant="h5">
               Have a question?
             </Typography>
           </Box>
-          <Typography sx={{ marginLeft: '4em' }} variant="body2" paragraph>
+          <Typography className="margin-left-4" variant="body2" paragraph>
             Find you answers in FAQ or email openbc.ca@gmail.com with any
             questions or feedback.
           </Typography>
@@ -133,14 +118,14 @@ export default function JoinUs() {
         Core Values
       </Typography>
       <Box className="sub-container-2-col">
-        <Box sx={{ width: '70%' }}>
+        <Box className="box-size-70">
           <CoreValues />
           <CoreValues />
           <CoreValues />
           <CoreValues />
           <CoreValues />
         </Box>
-        <Box sx={{ width: '30%' }}>
+        <Box className="box-size-30">
           <Image
             src="https://source.unsplash.com/random?wallpapers"
             alt="Description"
@@ -151,7 +136,7 @@ export default function JoinUs() {
         </Box>
       </Box>
       <Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Box className="display-flex__center">
           <Typography className="sub-header" variant="h5">
             Frequently Asked Question (FAQ)
           </Typography>
