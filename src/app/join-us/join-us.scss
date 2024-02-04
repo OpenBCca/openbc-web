@@ -93,9 +93,9 @@ body {
       justify-content: center;
     }
 
-    &__space-between {
+    &__space-around {
       @extend .display-flex;
-      justify-content: space-between;
+      justify-content: space-around;
     }
   }
 }
