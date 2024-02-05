@@ -2,6 +2,7 @@
 
 import { Box, Button, Container, Typography } from '@mui/material';
 import { Abhaya_Libre, Lato } from 'next/font/google';
+import Image from 'next/image';
 import React from 'react';
 import './banner.scss';
 
@@ -50,7 +51,15 @@ function Banner() {
             </Button>
           </Box>
         </Box>
-        <Box className="banner__image-container"></Box>
+        <Box className="banner__image-container">
+          <Image
+            src="https://source.unsplash.com/random?wallpapers"
+            alt="banner image"
+            width={1500}
+            height={440}
+            className="banner__image"
+          />
+        </Box>
       </Container>
     </Box>
   );

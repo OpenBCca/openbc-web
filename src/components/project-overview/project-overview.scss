@@ -12,7 +12,9 @@
   gap: 32px;
 
   &__heading {
+    font-family: inherit;
     font-size: 44px;
+    font-weight: 700;
   }
 
   &__card-container {
@@ -44,18 +46,23 @@
     align-items: center;
     justify-self: center;
     gap: 1rem;
+
   }
 
   &__cta-text {
     font-size: 20px;
+    font-family: inherit;
   }
 
   &__cta-title {
     font-size: 40px;
+    font-family: inherit;
+    font-weight: 700;
   }
 
   &__cta-button {
     color: #424242;
     border: 1.8px solid #424242;
+    font-family: inherit;
   }
 }
