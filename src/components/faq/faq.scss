@@ -1,21 +1,37 @@
-.box-compressed {
-  width: 50%;
+@use '../../app/globals.scss' as *;
 
-  &__margin {
-    @extend .box-compressed;
-    margin: auto;
-  }
-}
-
-.display-flex {
+.faq {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  gap: 32px;
 
-  &__space-between {
-    @extend .display-flex;
-    justify-content: space-between;
+  &__heading {
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    font-family: inherit;
+    color: $text-color-primary;
   }
-}
 
-.divider {
-  border-radius: 1;
+  &__list {
+    max-width: 800px;
+  }
+
+  &__question {
+    font-size: 20px;
+    color: $text-color-primary;
+    font-family: inherit;
+  }
+
+  &__answer {
+    font-size: 18px;
+    color: $text-color-secondary;
+    font-family: inherit;
+  }
 }

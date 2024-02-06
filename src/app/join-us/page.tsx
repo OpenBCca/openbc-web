@@ -139,14 +139,6 @@ export default function JoinUs() {
         </Box>
       </Box>
       <Box>
-        <Box className="display-flex__center">
-          <Typography className="sub-header" variant="h5">
-            Frequently Asked Question (FAQ)
-          </Typography>
-        </Box>
-        <Faq />
-        <Faq />
-        <Faq />
         <Faq />
       </Box>
     </Container>
