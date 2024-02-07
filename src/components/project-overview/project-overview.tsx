@@ -26,16 +26,13 @@ export default async function ProjectOverview() {
         <Box className="project-overview__card-container">
           {localProjectData.map((project: ProjectInterface) => (
             <Fragment key={project.title}>
-              <Box className="project-overview__card">
-                <Card>
-                  <Project
-                    title={project.title}
-                    description={project.description}
-                    links={project.links}
-                    status={project.status}
-                  />
-                </Card>
-              </Box>
+              <Project
+                className="project-overview__card"
+                title={project.title}
+                description={project.description}
+                links={project.links}
+                status={project.status}
+              />
             </Fragment>
           ))}
         </Box>
@@ -52,6 +49,7 @@ export default async function ProjectOverview() {
             variant="outlined"
             size="large"
             className="project-overview__cta-button"
+            href="mailto:openbc@gmail.com"
           >
             Propose A Project
           </Button>

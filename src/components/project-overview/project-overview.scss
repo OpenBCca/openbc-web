@@ -1,3 +1,5 @@
+@use '../../app/globals.scss' as *;
+
 .project-overview-container {
   display: flex;
   flex-direction: column;
@@ -9,7 +11,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
+  color: $text-color-primary;
 
   &__heading {
     font-family: inherit;
@@ -19,13 +22,25 @@
 
   &__card-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 32px;
+    gap: 2rem;
+    max-width: 100%;
+
+    @media only screen and (max-width:640px) {
+      flex-direction: column;
+    }
+
   }
 
   &__card {
-    width: 33%;
+    width: 384px;
+    height: 594px;
+
+    @media only screen and (max-width:640px) {
+      width: 100%;
+
+    }
 
   }
 
@@ -37,6 +52,12 @@
     justify-content: center;
     gap: 1.5rem;
     border-top: 1.6px solid #bebebe;
+    text-align: center;
+
+    @media only screen and (max-width:640px) {
+      width: 100%;
+      padding: 1.5rem 0;
+    }
 
   }
 
@@ -61,8 +82,13 @@
   }
 
   &__cta-button {
-    color: #424242;
-    border: 1.8px solid #424242;
+    color: $text-color-primary;
+    border: 1.8px solid $text-color-primary;
     font-family: inherit;
+    text-transform: none;
+
+    @media only screen and (max-width:640px) {
+      width: 100%;
+    }
   }
 }

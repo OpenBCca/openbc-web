@@ -21,9 +21,10 @@ export default function Project({
   tools,
   technologies,
   programAreas, // status,
+  className,
 }: ProjectInterface) {
   return (
-    <Card className="project-card">
+    <Card className={`project-card ${className}`}>
       <CardMedia
         component="div"
         className="project-card-media"

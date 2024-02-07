@@ -1,10 +1,10 @@
-@use '../../app/globals';
+@use '../../app/globals' as *;
 
 .banner-container {
   min-height: 75vh;
   width: 100%;
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .banner {
@@ -12,14 +12,14 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  gap: 64px;
+  gap: 4rem;
 
   &__text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 24px;
+    gap: 1.5rem;
   }
 
   &__title {
@@ -27,6 +27,7 @@
     font-weight: 800;
     letter-spacing: -1.12px;
     text-align: center;
+    color: $text-color-primary;
   }
 
   &__text {
@@ -34,6 +35,7 @@
     max-width: 655px;
     text-align: center;
     letter-spacing: -0.48px;
+    color: $text-color-primary;
   }
 
   &__button-container {
@@ -41,7 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 1rem;
 
     @media only screen and (max-width:640px) {
       flex-direction: column;
