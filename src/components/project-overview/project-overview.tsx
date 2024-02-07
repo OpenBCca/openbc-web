@@ -1,7 +1,7 @@
 import { Project as ProjectInterface } from '@/app/dataModels/project';
 import Project from '@/components/project-card/project-card';
 import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
-import { Box, Button, Card, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import { Lato } from 'next/font/google';
 import { Fragment } from 'react';
 import './project-overview.scss';
