@@ -2,23 +2,14 @@ import { Project as ProjectInterface } from '@/app/dataModels/project';
 import Project from '@/components/project-card/project-card';
 import { getLocalProjectData } from '@/utils/get-local-project-data/get-local-project-data';
 import { Box, Button, Container, Typography } from '@mui/material';
-import { Lato } from 'next/font/google';
 import { Fragment } from 'react';
 import './project-overview.scss';
-
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-});
 
 export default async function ProjectOverview() {
   const localProjectData = await getLocalProjectData();
   const githubApiCall = process.env.githubApiCall;
   return !githubApiCall ? (
-    <Box
-      className={`project-overview-container ${lato.className}`}
-      component="section"
-    >
+    <Box className="project-overview-container" component="section">
       <Container className="project-overview">
         <Typography className="project-overview__heading" variant="h2">
           Our Projects

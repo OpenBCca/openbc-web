@@ -36,6 +36,7 @@
     text-align: center;
     letter-spacing: -0.48px;
     color: $text-color-primary;
+    font-family: inherit;
   }
 
   &__button-container {
@@ -53,9 +54,8 @@
   }
 
   &__button {
-
     text-transform: none;
-
+    font-family: inherit;
     min-width: 184px;
 
     @media only screen and (max-width:640px) {

@@ -1,16 +1,19 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/header';
-import { Inter } from 'next/font/google';
-import './globals.scss';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { Lato } from 'next/font/google';
 import React from 'react';
+import './globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '700', '900'],
+});
 
 export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <Header />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           {children}

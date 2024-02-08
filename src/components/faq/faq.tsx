@@ -8,13 +8,8 @@ import {
 } from '@mui/material';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import { styled } from '@mui/material/styles';
-import { Lato } from 'next/font/google';
 import React, { useState } from 'react';
 import './faq.scss';
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-});
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const Accordion = styled((props: AccordionProps) => (
@@ -23,14 +18,14 @@ const Accordion = styled((props: AccordionProps) => (
   borderBottom: `1px solid ${theme.palette.divider}`,
 }));
 
-export default function Faq() {
+export default function FrequentlyAskedQuestions() {
   const [expanded, setExpanded] = useState<string | false>(false);
   const handleChange = (isExpanded: boolean, panel: string) => {
     setExpanded(isExpanded ? panel : false);
   };
 
   return (
-    <Box className={`${lato.className} faq`}>
+    <Box className="faq">
       <Typography variant="h2" className="faq__heading">
         Frequently Asked Questions
       </Typography>

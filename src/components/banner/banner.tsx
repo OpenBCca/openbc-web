@@ -1,42 +1,25 @@
 'use client';
 
 import { Box, Button, Container, Typography } from '@mui/material';
-import { Abhaya_Libre, Lato } from 'next/font/google';
 import Image from 'next/image';
 import React from 'react';
 import './banner.scss';
-
-const abhayaLibre = Abhaya_Libre({
-  subsets: ['latin'],
-  weight: ['800'],
-});
-
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400'],
-});
 
 function Banner() {
   return (
     <Box className="banner-container">
       <Container className="banner">
         <Box className="banner__text-container">
-          <Typography
-            variant="h1"
-            className={`${abhayaLibre.className} banner__title`}
-          >
+          <Typography variant="h1" className="banner__title page-heading">
             {'Be a Force For Good in BC!'}
           </Typography>
-          <Typography
-            variant="body1"
-            className={`${lato.className} banner__text`}
-          >
+          <Typography variant="body1" className="banner__text">
             Do you have design, writing, or coding skills? You have the power to
             elevate British Columbia to new heights through OpenBC.
           </Typography>
           <Box className="banner__button-container">
             <Button
-              className={`${lato.className} banner__button`}
+              className="banner__button"
               variant="outlined"
               size="large"
               href="mailto:openbc@gmail.com"
@@ -44,7 +27,7 @@ function Banner() {
               Become A Partner
             </Button>
             <Button
-              className={`${lato.className} banner__button`}
+              className="banner__button"
               variant="contained"
               size="large"
               href="mailto:openbc@gmail.com"

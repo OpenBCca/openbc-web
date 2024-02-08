@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/qnx3faq.css");
+
 $primary-color: #2563eb;
 $secondary-color: #ffffff;
 $tertiary-color: #e7e5e4;
@@ -20,4 +22,11 @@ body {
 
 .centered-elements {
   text-align: center;
+}
+
+.page-heading {
+  font-family: "Source Serif Pro";
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -1.12px;
 }
