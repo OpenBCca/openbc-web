@@ -23,16 +23,4 @@
   &__list {
     max-width: 800px;
   }
-
-  &__question {
-    font-size: 20px;
-    color: $text-color-primary;
-    font-family: inherit;
-  }
-
-  &__answer {
-    font-size: 18px;
-    color: $text-color-secondary;
-    font-family: inherit;
-  }
 }
