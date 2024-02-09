@@ -1,0 +1,21 @@
+.box-compressed {
+  width: 50%;
+
+  &__margin {
+    @extend .box-compressed;
+    margin: auto;
+  }
+}
+
+.display-flex {
+  display: flex;
+
+  &__space-between {
+    @extend .display-flex;
+    justify-content: space-between;
+  }
+}
+
+.divider {
+  border-radius: 1;
+}
