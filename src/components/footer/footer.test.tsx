@@ -7,7 +7,7 @@ describe('Footer', () => {
   it('should render footer title', () => {
     render(<Footer />);
     const footerTitle = screen.getByText('OpenBC', {
-      selector: '.footer-title',
+      selector: '.footer__logo',
     });
     expect(footerTitle).toBeInTheDocument();
   });
@@ -15,9 +15,12 @@ describe('Footer', () => {
   it('should render footer subtitle', () => {
     render(<Footer />);
 
-    const footerSubtitle = screen.getByText('Sample Text', {
-      selector: '.footer-subtitle',
-    });
-    expect(footerSubtitle).toBeInTheDocument();
+    const footerLabel = screen.getByText(
+      'Get the latest updates about OpenBC',
+      {
+        selector: '.footer__label',
+      }
+    );
+    expect(footerLabel).toBeInTheDocument();
   });
 });
