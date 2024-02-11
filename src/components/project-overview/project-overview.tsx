@@ -18,7 +18,6 @@ export default async function ProjectOverview() {
           {localProjectData.map((project: ProjectInterface) => (
             <Fragment key={project.title}>
               <Project
-                className="project-overview__card"
                 title={project.title}
                 description={project.description}
                 links={project.links}
