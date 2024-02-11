@@ -20,10 +20,10 @@ export default function Project({
   languages,
   tools,
   technologies,
-  programAreas, // status,
+  programAreas, // status
 }: ProjectInterface) {
   return (
-    <Card className="project-card">
+    <Card className="project-card project-overview__card">
       <CardMedia
         component="div"
         className="project-card-media"

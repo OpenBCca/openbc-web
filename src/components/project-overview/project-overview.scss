@@ -1,15 +1,94 @@
-body {
-  .project-overview-container {
+@use '../../app/globals.scss' as *;
+
+.project-overview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: $text-color-primary;
+
+  &__heading {
+    font-family: inherit;
+    font-size: 44px;
+    font-weight: 700;
+  }
+
+  &__card-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 100%;
+
+    @media only screen and (max-width:640px) {
+      flex-direction: column;
+    }
+
+  }
+
+  &__card {
+    width: 384px;
+    height: 594px;
+
+    @media only screen and (max-width:640px) {
+      width: 100%;
+
+    }
+
+  }
+
+  &__cta-container {
+    padding: 1.5rem 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: '#ededed';
-    margin-top: 1rem;
+    justify-content: center;
+    gap: 1.5rem;
+    border-top: 1.6px solid #bebebe;
+    text-align: center;
+
+    @media only screen and (max-width:640px) {
+      width: 100%;
+      padding: 1.5rem 0;
+    }
+
   }
 
-  .project-overview-card {
-    max-width: 700px;
-    width: 100%;
-    margin-bottom: 1rem;
+  &__cta-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 1rem;
+
+  }
+
+  &__cta-text {
+    font-size: 20px;
+    font-family: inherit;
+  }
+
+  &__cta-title {
+    font-size: 40px;
+    font-family: inherit;
+    font-weight: 700;
+  }
+
+  &__cta-button {
+    color: $text-color-primary;
+    border: 1.8px solid $text-color-primary;
+    font-family: inherit;
+    text-transform: none;
+
+    @media only screen and (max-width:640px) {
+      width: 100%;
+    }
   }
 }

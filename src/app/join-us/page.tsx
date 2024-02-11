@@ -1,5 +1,5 @@
 import CoreValues from '@/components/core-values/core-values';
-import Faq from '@/components/faq/faq';
+import FrequentlyAskedQuestions from '@/components/faq/faq';
 import { Box, Divider, Link, Paper, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
 import Image from 'next/image';
@@ -139,15 +139,7 @@ export default function JoinUs() {
         </Box>
       </Box>
       <Box>
-        <Box className="display-flex__center">
-          <Typography className="sub-header" variant="h5">
-            Frequently Asked Question (FAQ)
-          </Typography>
-        </Box>
-        <Faq />
-        <Faq />
-        <Faq />
-        <Faq />
+        <FrequentlyAskedQuestions />
       </Box>
     </Container>
   );
