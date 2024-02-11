@@ -38,7 +38,7 @@ function Banner() {
         </Box>
         <Box className="banner__image-container">
           <Image
-            src="./assets/hero-Image.png"
+            src="/assets/hero-Image.png"
             alt="banner image"
             width={1500}
             height={440}
