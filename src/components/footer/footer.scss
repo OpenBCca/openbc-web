@@ -19,6 +19,7 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1.5rem;
     align-items: center;
 
@@ -36,10 +37,10 @@
 
   &__menu {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+
 
     @media only screen and (max-width:640px) {
       gap: 16px;
@@ -47,10 +48,7 @@
   }
 
   &__logo {
-    color: #424242;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 700;
+    width: 48px;
     cursor: pointer;
   }
 
@@ -62,19 +60,16 @@
   }
 
   &__button {
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
     color: #424242;
-    transition: all .2s;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    font-family: inherit;
 
     &--highlight {
       border-radius: 20px;
       padding: 0.25rem 1.25rem;
-      background-color: #E1E1E1;
+      background-color: #B9DDFF;
+      color: #1566B5;
     }
   }
 
@@ -102,15 +97,15 @@
   }
 
   &__label {
-    font-weight: 500;
+    font-size: 18px;
     color: #424242;
+    font-family: inherit;
   }
 
   &__input {
-    display: flex;
+    font-family: inherit;
     padding: 0.5rem 0.75rem;
     align-items: center;
-    gap: 0.75rem;
     flex: 1 0 0;
     align-self: stretch;
     border-radius: 6px;
@@ -135,6 +130,7 @@
     border: 1.8px solid #424242;
     text-transform: none;
     color: #575757;
+    font-size: 18px;
 
     @media only screen and (max-width:640px) {
       width: 100%;
@@ -153,9 +149,7 @@
 
   &__link {
     color: #737373;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
+    font-size: 16px;
     transition: all .2s;
 
     &:hover {

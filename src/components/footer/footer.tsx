@@ -1,6 +1,13 @@
 'use client';
 
-import { Box, Button, Container, IconButton, Link } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Link,
+  Typography,
+} from '@mui/material';
 import Image from 'next/image';
 import './footer.scss';
 
@@ -10,23 +17,43 @@ function Footer() {
       <Container className="footer">
         <Box className="footer__wrapper">
           <Box className="footer__menu">
-            <Link href="/" className="footer__logo">
-              OpenBC
-            </Link>
-            <Box className="footer__buttons">
-              <Link href="/about" className="footer__button">
+            <Image
+              src="/assets/OpenBC-logo.svg"
+              width={48}
+              height={48}
+              alt="OpenBC logo"
+              className="footer__logo"
+            />
+            <Typography className="footer__button">
+              <Link
+                underline="none"
+                color="inherit"
+                href="/about"
+                className="footer__button"
+              >
                 About
               </Link>
+            </Typography>
+            <Typography className="footer__button">
               <Link
+                underline="none"
+                color="inherit"
                 href="/join-us"
                 className="footer__button footer__button--highlight"
               >
                 Join Us!
               </Link>
-              <Link href="#" className="footer__button">
+            </Typography>
+
+            <Typography className="footer__button">
+              <Link
+                underline="none"
+                color="inherit"
+                href="mailto:openbc.ca@gmail.com"
+              >
                 Contact Us
               </Link>
-            </Box>
+            </Typography>
           </Box>
           <form className="footer__newsletter">
             <label htmlFor="" className="footer__label">
@@ -52,8 +79,8 @@ function Footer() {
               <Image
                 src="/assets/github_Icon.svg"
                 alt="GitHub"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
             </IconButton>
             <IconButton
@@ -64,18 +91,22 @@ function Footer() {
               <Image
                 src="/assets/linkedin_Icon.svg"
                 alt="LinkedIn"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
             </IconButton>
           </Box>
           <Box className="footer__links">
-            <Link href="#" className="footer__link">
-              Terms of Service
-            </Link>
-            <Link href="#" className="footer__link">
-              Privacy Policy
-            </Link>
+            <Typography className="footer__link">
+              <Link href="#" color="inherit" underline="none">
+                Terms of Service
+              </Link>
+            </Typography>
+            <Typography className="footer__link">
+              <Link href="#" color="inherit" underline="none">
+                Privacy Policy
+              </Link>
+            </Typography>
           </Box>
         </Box>
       </Container>
